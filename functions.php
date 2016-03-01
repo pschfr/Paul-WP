@@ -66,3 +66,17 @@ function disable_emojicons_tinymce( $plugins ) {
 // Disable edit this link on pages when logged in
 add_filter('edit_post_link', 'wpse_remove_edit_post_link');
 function wpse_remove_edit_post_link($link) { return ''; }
+
+// Sets maximum number of post revisions to avoid DB bloat
+if (!defined('WP_POST_REVISIONS')) define('WP_POST_REVISIONS', 5);
+
+// Logs DB Queries, Time Spent, and Memory Consumption
+function performance( $visible = false ) {
+    $stat = sprintf(  '%d queries in %.3f seconds, using %.2fMB memory',
+        get_num_queries(),
+        timer_stop(0, 3),
+        memory_get_peak_usage() / 1024 / 1024
+    );
+    echo $visible ? $stat : "<!-- {$stat} -->" ;
+}
+add_action( 'wp_footer', 'performance', 20 );

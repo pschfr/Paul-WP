@@ -184,7 +184,7 @@ div#map-container div#contact-form-2 {
 	overflow: auto;
 	margin: auto;
 	z-index: 99;
-	height: 75%;
+	height: 65%;
 	width:  50%;
 	color: #fff;
 }
@@ -205,6 +205,20 @@ div#map-container div#contact-form-2 form input, div#map-container div#contact-f
 }
 div#map-container div#contact-form-2 form input:focus, div#map-container div#contact-form-2 form textarea:focus { border-color: #fff; }
 
+
+::-webkit-input-placeholder {
+	font-style: italic;
+	color: #ddd;
+}
+::-moz-placeholder {
+	font-style: italic;
+	color: #ddd;
+	opacity: 1;
+}
+::placeholder {
+	font-style: italic;
+	color: #ddd;
+}
 
 footer {
 	background-color: #333;
