@@ -12,6 +12,7 @@
 			<p>Ribeye shank corned beef pork belly tail ham hock cow chicken doner tongue short ribs beef ribs. Brisket porchetta filet mignon chicken swine chuck.</p>
 		</div>
 		<div class='grid__col--1-of-4 grid__col share'>
+			Share with<br>
 			<a href='https://facebook.com/sharer/sharer.php?u=<?php echo urlencode(site_url()); ?>' target='_blank' class='js-social-share facebook'><span class='ion-social-facebook'></span></a>
 			<a href='https://twitter.com/intent/tweet/?text=Paul%20Schaefer,%20digital%20artist%20and%20cool%20dude&via=pschfr&url=<?php echo urlencode(site_url()); ?>' target='_blank' class='js-social-share twitter'><span class='ion-social-twitter'></span></a>
 			<a href='mailto:?to=%20&subject=Look%20at%20this%20rad%20website!&body=<?php echo urlencode(site_url()); ?>' class='email'><span class='ion-email'></span></a><br>

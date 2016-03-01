@@ -83,10 +83,7 @@ header h1 {
 	padding: 0 5px;
 	margin-top: 0;
 }
-header span.amp {
-	display: inline-block;
-	cursor: pointer;
-}
+header span.amp { display: inline-block; }
 header a.arrow {
 	-webkit-animation: bounce 5s infinite;
 	-moz-animation:    bounce 5s infinite;
@@ -143,12 +140,77 @@ div#gitProjects dl dt span.right {
 }
 div#gitProjects dl dt span.ion-arrow-right-c { padding-left: .25em; }
 
+div.slick-slider { margin-top: 4em; }
+div.slick-slider div.slick-list div.quote { outline: none; }
+div.slick-slider div.slick-list.draggable {
+	cursor: -webkit-grab;
+	cursor:    -moz-grab;
+	cursor:         grab;
+}
+div.slick-slider div.slick-list.draggable:active {
+	cursor: -webkit-grabbing;
+	cursor:    -moz-grabbing;
+	cursor:         grabbing;
+}
+div.testimonials-slide-widget.design-3 h4, div.testimonials-slide-widget.design-3 .testimonials-text p { font-family: serif; }
+div.testimonials-slide-widget.design-3 h4 {
+	font-size: 26px !important;
+	font-variant: small-caps;
+	text-transform: none;
+}
+div.testimonials-slide-widget.design-3 div.testimonials-text p {
+	letter-spacing: -.5px;
+	font-size: 20px;
+}
+div.testimonials-slide-widget.design-3 button.slick-arrow {
+	-webkit-transition: all .25s;
+	-moz-transition:    all .25s;
+	transition:         all .25s;
+	opacity: .5;
+	outline:  0;
+}
+div.testimonials-slide-widget.design-3 button.slick-arrow:hover { opacity: 1; }
+div.testimonials-text em:before { margin-right: .125em; }
+div.testimonials-text em:after  { margin-left:  .125em; }
+
+div#map-container {
+	position: relative;
+	margin-top: 4rem;
+}
+div#map-container div#contact-map { height: 35rem; }
+div#map-container div#contact-form-2 {
+	left: 0; right: 0; bottom: 0; top: 0;
+	position: absolute;
+	overflow: auto;
+	margin: auto;
+	z-index: 99;
+	height: 75%;
+	width:  50%;
+	color: #fff;
+}
+div#map-container div#contact-form-2 form p { padding: none; }
+div#map-container div#contact-form-2 form label { margin: 0; }
+div#map-container div#contact-form-2 form input, div#map-container div#contact-form-2 form textarea {
+	background-color: rgba(255,255,255,.3);
+	border: 1px solid transparent;
+	-webkit-transition: all .25s;
+	-moz-transition:    all .25s;
+	transition:         all .25s;
+	margin-bottom: .5rem;
+	max-width: 100%;
+	padding: .5rem;
+	width: 100%;
+	color: #fff;
+	outline: 0;
+}
+div#map-container div#contact-form-2 form input:focus, div#map-container div#contact-form-2 form textarea:focus { border-color: #fff; }
+
+
 footer {
 	background-color: #333;
 	position: relative;
 	padding: 50px 0 0;
 	font-size: .95em;
-	margin-top: 2em;
 	color: #b2b2b2;
 }
 footer div.share {
@@ -160,8 +222,8 @@ footer div.share a {
 	-webkit-transition: all .125s ease;
 	-moz-transition:    all .125s ease;
 	transition:         all .125s ease;
+	margin: 1rem 6px 1rem 6px;
 	display: inline-block;
-	margin: 0 12px 24px 0;
 	font-size: 32px;
 	padding: 3px;
 	height: 40px;
@@ -208,6 +270,7 @@ footer span.pulse::before {
 		max-width: 90vw;
 	}
 	.grid__col { padding-left: 0 !important; }
+	div#map-container div#contact-form-2 { width: 90%; }
 }
 @media screen and (max-width: 768px) and (orientation: landscape) {
 	header div.wrap { font-size: 6vw; }

@@ -7,6 +7,7 @@ function my_scripts() {
 	wp_enqueue_script('gitQuery', get_template_directory_uri() . '/js/gitQuery.js', array('jquery'), '', true);
 	wp_enqueue_script('jribbble', get_template_directory_uri() . '/js/jribbble.min.js', array('jquery'), '', true);
 	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?callback=initMap', array('jquery', 'main'), '', true);
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles', 11 );
@@ -61,9 +62,6 @@ function disable_emojicons_tinymce( $plugins ) {
 		return array();
 	}
 }
-
-// Disable admin bar in front end of site when logged in
-show_admin_bar(false);
 
 // Disable edit this link on pages when logged in
 add_filter('edit_post_link', 'wpse_remove_edit_post_link');
