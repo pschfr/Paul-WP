@@ -64,7 +64,7 @@ $(function() {
 		shots.forEach(function(shot) {
 			html.push('<li class="shots--shot">');
     		html.push('<a href="' + shot.html_url + '" target="_blank">');
-    		html.push('<img src="' + shot.images.normal + '" title="' + shot.title + ', ' + shot.likes_count + ' likes">');
+    		html.push('<img src="' + (shot.images.hidpi ? (shot.images.hidpi) : shot.images.normal) + '" title="' + shot.title + ', ' + shot.likes_count + ' likes">');
 			//html.push('<small>' + shot.description + '</small>');
     		html.push('</a></li>');
 			console.log('dribbble shots added');
