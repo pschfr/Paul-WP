@@ -100,7 +100,30 @@ header a.arrow {
 	left: 0%;
 }
 
-h4 span { font-size: 4rem; }
+h4 span {
+	-webkit-transition: all .35s;
+	-moz-transition:    all .35s;
+	transition:         all .35s;
+	-webkit-border-radius:  100%;
+	-moz-border-radius:     100%;
+	border-radius:          100%;
+	line-height: 4rem;
+	font-size: 4rem;
+	display: block;
+	margin: 0 auto;
+	height: 4.5rem;
+	width:  4.5rem;
+}
+h4 span.ion-social-dribbble {
+	height: 4.15rem;
+	width:  4.15rem;
+}
+h4 span.ion-social-github { line-height: 4.67rem; }
+h4 span:hover {
+	background-color: #333;
+	color: #fff;
+}
+h4 span.ion-social-dribbble:hover { background-color: #ea4c89; }
 
 ul#shots {
 	padding: 0;
