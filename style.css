@@ -1,0 +1,192 @@
+/*
+Theme Name: Paul
+Author: Paul Schaefer
+Author URI: http://pschfr.net/
+License: GNU General Public License
+License URI: https://www.gnu.org/licenses/gpl.html
+*/
+@charset 'UTF-8';
+html {
+	-webkit-animation: fadeIn 1s .5s 1 both;
+	-moz-animation:    fadeIn 1s .5s 1 both;
+	animation:         fadeIn 1s .5s 1 both;
+	box-sizing: border-box;
+	color: #333;
+}
+*, *:before, *:after { box-sizing: inherit; }
+
+img { max-width: 100%; }
+a, a:hover, a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+	font-weight: normal;
+}
+h2 {
+	font-size: 3em;
+	margin: 1em 0;
+}
+h4 {
+	text-transform: uppercase;
+	font-family: sans-serif;
+	margin: 0 0 1em;
+	font-size: 2em;
+}
+p {
+	padding-bottom: 1em;
+	line-height:  1.6;
+	margin: 0;
+}
+
+.clear { clear:  both; }
+.left  { float:  left; }
+.right { float: right; }
+.icon  { font-size: 8em; }
+.container {
+	max-width: 1200px;
+	max-width:   75vw;
+	margin: 0 auto;
+}
+.centered, .grid__col--centered {
+	text-align: center;
+	display: block;
+}
+
+header {
+	-webkit-animation: colorful 20s cubic-bezier(.45, .05, .55, .95) infinite alternate;
+	-moz-animation:    colorful 20s cubic-bezier(.45, .05, .55, .95) infinite alternate;
+	animation:         colorful 20s cubic-bezier(.45, .05, .55, .95) infinite alternate;
+	position: relative;
+	height: 1000px;
+	height:  100vh;
+	display: table;
+	width: 100%;
+	color: #fff;
+}
+header div#particles-cont {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+header div.wrap {
+	vertical-align: middle;
+	letter-spacing: -1px;
+	display: table-cell;
+	font-style:  italic;
+	text-align: center;
+	font-size: 65px;
+	font-size:  6vw;
+}
+header h1 {
+	padding: 0 5px;
+	margin-top: 0;
+}
+header span.amp {
+	display: inline-block;
+	cursor: pointer;
+}
+header a.arrow {
+	-webkit-animation: bounce 5s infinite;
+	-moz-animation:    bounce 5s infinite;
+	animation:         bounce 5s infinite;
+	position: absolute;
+	text-align: center;
+	font-size: 24px;
+	font-size:  2vw;
+	width: 100%;
+	bottom: 1%;
+	left: 0%;
+}
+
+h4 span { font-size: 4rem; }
+
+ul#shots {
+	padding: 0;
+	margin: 0;
+}
+
+div#gitProjects dl { margin: 0; }
+div#gitProjects dl dt {
+	margin-bottom: 2.5em;
+	line-height: 1.6;
+}
+div#gitProjects dl dt a { border-bottom: 1px dotted; }
+div#gitProjects dl dt span.right {
+	font-size: .9em;
+	float: right;
+	color: #999;
+}
+div#gitProjects dl dt span.ion-arrow-right-c { padding-left: .25em; }
+
+footer {
+	background-color: #333;
+	position: relative;
+	padding: 50px 0 0;
+	font-size: .95em;
+	margin-top: 2em;
+	color: #b2b2b2;
+}
+footer div.share {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 13px;
+}
+footer div.share a {
+	-webkit-transition: all .125s ease;
+	-moz-transition:    all .125s ease;
+	transition:         all .125s ease;
+	display: inline-block;
+	margin: 0 12px 24px 0;
+	font-size: 32px;
+	padding: 3px;
+	height: 40px;
+	width:  40px;
+	color: #fff;
+}
+footer div.share a.facebook { background-color: #3b5999; }
+footer div.share a.twitter  { background-color: #55acee; }
+footer div.share a.email    { background-color: #C92C19; }
+footer div.share a:hover {
+	-webkit-transform: scale(1.25,1.25);
+	-moz-transform:    scale(1.25,1.25);
+	transform:         scale(1.25,1.25);
+}
+footer div.share a:focus {
+	-webkit-transform: scale(1.1,1.1);
+	-moz-transform:    scale(1.1,1.1);
+	transform:         scale(1.1,1.1);
+}
+footer span.pulse::before {
+	-webkit-animation: pulse 1.5s linear infinite;
+	-moz-animation:    pulse 1.5s linear infinite;
+	animation:         pulse 1.5s linear infinite;
+	font-size: 115%;
+	color: #F33425;
+}
+
+@media screen and (max-width: 768px) {
+	header div.wrap {
+		font-size: 45px;
+		font-size: 11vw;
+	}
+	header h1 { margin: 0; }
+	header span.amp {
+		margin: 0 auto;
+		display: block;
+	}
+	header a.arrow {
+		font-size: 32px;
+		font-size:  6vw;
+	}
+	.container {
+		max-width: 90%;
+		max-width: 90vw;
+	}
+	.grid__col { padding-left: 0 !important; }
+}
+@media screen and (max-width: 768px) and (orientation: landscape) {
+	header div.wrap { font-size: 6vw; }
+	header h3 { line-height: 1.15; }
+}
