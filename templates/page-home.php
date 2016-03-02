@@ -26,10 +26,6 @@
 <?php get_sidebar(); ?>
 <div id='map-container'>
 	<div id="contact-map"></div>
-	<?php echo do_shortcode("[contact-form to='yo@pschfr.net']
-		[contact-field label='Name' type='name' required='1'/]
-		[contact-field label='Email' type='email' required='1'/]
-		[contact-field label='Comment' type='textarea' required='1'/]
-	[/contact-form]"); ?>
+	<?php echo do_shortcode('[contact-form-7 id="71" title="Contact form 1"]'); ?>
 </div>
 <?php get_footer(); ?>

@@ -60,9 +60,8 @@ $(function() {
 	// Initiates jribbble, gets shots back from Dribbble API
 	$.jribbble.setToken('00ec9c39f4ec6509d9e7fca3b51c7a4ff92bcb8192d7fd7c374c6fd454ce6b06').users('pschfr').shots({per_page: 20}).then(function(shots) {
 		var html = [];
-
 		shots.forEach(function(shot) {
-			html.push('<li class="shots--shot grid__col grid__col--1-of-2">');
+			html.push('<li class="shots--shot grid__col grid__col--1-of-3">');
     		html.push('<a href="' + shot.html_url + '" target="_blank">');
     		html.push('<img src="' + (shot.images.hidpi ? (shot.images.hidpi) : shot.images.normal) + '" title="' + shot.title + ', ' + shot.likes_count + ' likes">');
 			//html.push('<small>' + shot.description + '</small>');
@@ -71,23 +70,6 @@ $(function() {
 			// http://developer.dribbble.com/v1/shots/#response
 			// for reference if you wanna see what else you can return
 		});
-
 		$('#shots').html(html.join(''));
 	});
-
-	// Initiates gitQuery.js, returns repos
-	$('#gitProjects').getRepos('pschfr');
-	// TODO: Properly auth to avoid rate limit
-	// 2a4f4979b74886a6be297164e084798a698b4dcf
-
-	// Hides form labels, puts in as placeholders
-	$("form.contact-form :input, form.contact-form textarea").each(function(index, elem) {
-    	var eId = $(elem).attr("id");
-    	var label = null;
-    	if (eId && (label = $(elem).parents("form").find("label[for="+eId+"]")).length == 1) {
-        	$(elem).attr("placeholder", $(label).text());
-        	$(label).hide();
-			console.log(eId);
-    	}
- 	});
 });

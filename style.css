@@ -97,49 +97,6 @@ header a.arrow {
 	left: 0%;
 }
 
-h4 span {
-	-webkit-transition: all .35s;
-	-moz-transition:    all .35s;
-	transition:         all .35s;
-	-webkit-border-radius:  100%;
-	-moz-border-radius:     100%;
-	border-radius:          100%;
-	line-height: 4rem;
-	font-size: 4rem;
-	display: block;
-	margin: 0 auto;
-	height: 4.5rem;
-	width:  4.5rem;
-}
-h4 span.ion-social-dribbble {
-	height: 4.15rem;
-	width:  4.15rem;
-}
-h4 span.ion-social-github { line-height: 4.67rem; }
-h4 span:hover {
-	background-color: #333;
-	color: #fff;
-}
-h4 span.ion-social-dribbble:hover { background-color: #ea4c89; }
-
-ul#shots {
-	padding: 0;
-	margin: 0;
-}
-
-div#gitProjects dl { margin: 0; }
-div#gitProjects dl dt {
-	margin-bottom: 2.5em;
-	line-height: 1.6;
-}
-div#gitProjects dl dt a { border-bottom: 1px dotted; }
-div#gitProjects dl dt span.right {
-	font-size: .9em;
-	float: right;
-	color: #999;
-}
-div#gitProjects dl dt span.ion-arrow-right-c { padding-left: .25em; }
-
 div.slick-slider { margin-top: 4em; }
 div.slick-slider div.slick-list div.quote { outline: none; }
 div.slick-slider div.slick-list.draggable {
@@ -178,20 +135,21 @@ div#map-container {
 	margin-top: 4rem;
 }
 div#map-container div#contact-map { height: 35rem; }
-div#map-container div#contact-form-2 {
+div#map-container div#wpcf7-f71-o1 {
 	left: 0; right: 0; bottom: 0; top: 0;
 	position: absolute;
 	overflow: auto;
 	margin: auto;
 	z-index: 99;
-	height: 65%;
+	height: 70%;
 	width:  50%;
 	color: #fff;
 }
-div#map-container div#contact-form-2 form p { padding: none; }
-div#map-container div#contact-form-2 form label { margin: 0; }
-div#map-container div#contact-form-2 form input, div#map-container div#contact-form-2 form textarea {
-	background-color: rgba(255,255,255,.3);
+div#map-container div#wpcf7-f71-o1 form p    { padding: 0; }
+div#map-container div#wpcf7-f71-o1 form label { margin: 0; }
+div#map-container div#wpcf7-f71-o1 form input, div#map-container div#wpcf7-f71-o1 form textarea {
+	background-color: #777777;
+	background-color: rgba(255,255,255,.2);
 	border: 1px solid transparent;
 	-webkit-transition: all .25s;
 	-moz-transition:    all .25s;
@@ -203,7 +161,12 @@ div#map-container div#contact-form-2 form input, div#map-container div#contact-f
 	color: #fff;
 	outline: 0;
 }
-div#map-container div#contact-form-2 form input:focus, div#map-container div#contact-form-2 form textarea:focus { border-color: #fff; }
+div#map-container div#wpcf7-f71-o1 form input:focus, div#map-container div#wpcf7-f71-o1 form textarea:focus  { border-color: #fff; }
+div#map-container div#wpcf7-f71-o1 form input[type="submit"], div#map-container div#wpcf7-f71-o1 form textarea { margin-bottom: 0; }
+div#map-container div.wpcf7-response-output { margin: 0; }
+div#map-container span.wpcf7-not-valid-tip { display: none; }
+div#map-container div#wpcf7-f71-o1 form input.wpcf7-not-valid { border-color: red; }
+
 
 
 ::-webkit-input-placeholder {
@@ -227,16 +190,25 @@ footer {
 	font-size: .95em;
 	color: #b2b2b2;
 }
+footer h4 {
+	text-transform: none;
+	font-size: 1.5em;
+}
+footer p.github-repo-list { font-size: .8em; }
+footer ul#shots, footer ul#shots li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
 footer div.share {
 	text-transform: uppercase;
 	text-align: center;
-	font-size: 13px;
 }
 footer div.share a {
 	-webkit-transition: all .125s ease;
 	-moz-transition:    all .125s ease;
 	transition:         all .125s ease;
-	margin: 1rem 6px 1rem 6px;
+	margin: 1rem 6px 3rem 6px;
 	display: inline-block;
 	font-size: 32px;
 	padding: 3px;
@@ -284,7 +256,11 @@ footer span.pulse::before {
 		max-width: 90vw;
 	}
 	.grid__col { padding-left: 0 !important; }
-	div#map-container div#contact-form-2 { width: 90%; }
+	div.testimonials-slide-widget.design-3 h4, div.testimonials-slide-widget.design-3 div.testimonials-text p {
+		letter-spacing: normal;
+		font-size: inherit;
+	}
+	div#map-container div#wpcf7-f71-o1 { width: 90%; }
 }
 @media screen and (max-width: 768px) and (orientation: landscape) {
 	header div.wrap { font-size: 6vw; }
