@@ -4,9 +4,12 @@ function my_scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', ("//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"), false, '', true);
 	wp_enqueue_script('particles', '//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js', '', '', true);
-	wp_enqueue_script('jribbble', get_template_directory_uri() . '/js/jribbble.min.js', array('jquery'), '', true);
-	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
-	wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?callback=initMap', array('jquery', 'main'), '', true);
+	wp_enqueue_script('main', get_template_directory_uri() . '/main.js', array('jquery'), '1.0.0', true );
+
+	if( is_page(72) ) {
+		// Loads in map script on contact page only
+		wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?callback=initMap', array('jquery', 'main'), '', true);
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles', 11 );
@@ -14,7 +17,6 @@ function theme_enqueue_styles() {
 	wp_enqueue_style('normalize', '//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css');
 	wp_enqueue_style('toast',     '//cdnjs.cloudflare.com/ajax/libs/toast-css/1.1.0/grid.min.css');
 	wp_enqueue_style('ionicons',  '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
-	wp_enqueue_style('animations', get_template_directory_uri().'/css/animations.css' );
 	wp_enqueue_style('main', get_template_directory_uri().'/style.css' );
 }
 
@@ -28,6 +30,12 @@ function my_widgets_init() {
 		'before_title' => '<h2>',
 		'after_title' => '</h2>'
 	));
+}
+
+// Disables loading CF7 files if not on contact page
+if (!is_page(72)) {
+	add_filter( 'wpcf7_load_css', '__return_false' );
+	add_filter( 'wpcf7_load_js',  '__return_false' );
 }
 
 // Added to disable srcset attributes on images, it makes them blurry on large displays in 4.4+
@@ -76,6 +84,6 @@ function performance( $visible = false ) {
         timer_stop(0, 3),
         memory_get_peak_usage() / 1024 / 1024
     );
-    echo $visible ? $stat : "<!-- {$stat} -->" ;
+    echo $visible ? $stat : "<!-- {$stat} -->\r\n" ;
 }
 add_action( 'wp_footer', 'performance', 20 );

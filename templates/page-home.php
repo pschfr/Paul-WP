@@ -24,8 +24,4 @@
     <?php endwhile; endif; ?>
 </section>
 <?php get_sidebar(); ?>
-<div id='map-container'>
-	<div id="contact-map"></div>
-	<?php echo do_shortcode('[contact-form-7 id="71" title="Contact form 1"]'); ?>
-</div>
 <?php get_footer(); ?>
