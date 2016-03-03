@@ -2,6 +2,7 @@
 add_action('wp_enqueue_scripts', 'my_scripts');
 function my_scripts() {
 	wp_deregister_script('jquery');
+	wp_deregister_script('wp-embed');
 	wp_register_script('jquery', ("//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"), false, '', true);
 	wp_enqueue_script('particles', '//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js', '', '', true);
 	wp_enqueue_script('main', get_template_directory_uri() . '/main.js', array('jquery'), '1.0.0', true );
@@ -38,7 +39,7 @@ if (!is_page(72)) {
 	add_filter( 'wpcf7_load_js',  '__return_false' );
 }
 
-// Added to disable srcset attributes on images, it makes them blurry on large displays in 4.4+
+// Disable srcset attributes on images, it makes them blurry on large displays in 4.4+
 add_filter('wp_get_attachment_image_attributes', function($attr) {
 	if (isset($attr['sizes']))
 		unset($attr['sizes']);
