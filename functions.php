@@ -3,13 +3,15 @@ add_action('wp_enqueue_scripts', 'my_scripts');
 function my_scripts() {
 	wp_deregister_script('jquery');
 	wp_deregister_script('wp-embed');
-	wp_register_script('jquery', ("//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"), false, '', true);
-	wp_enqueue_script('particles', '//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js', '', '', true);
+	wp_register_script('jquery', ( '//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'), false, '', true);
+	wp_enqueue_script('particles', '//cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js', '', '',  true);
 	wp_enqueue_script('main', get_template_directory_uri() . '/main.js', array('jquery'), '1.0.0', true );
 
 	if( is_page(72) ) {
-		// Loads in map script on contact page only
+		// Loads in map and contact form scripts on contact page only
 		wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?callback=initMap', array('jquery', 'main'), '', true);
+		wpcf7_enqueue_scripts();
+		wpcf7_enqueue_styles();
 	}
 }
 
@@ -17,7 +19,6 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles', 11 );
 function theme_enqueue_styles() {
 	wp_enqueue_style('normalize', '//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css');
 	wp_enqueue_style('toast',     '//cdnjs.cloudflare.com/ajax/libs/toast-css/1.1.0/grid.min.css');
-	wp_enqueue_style('ionicons',  '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 	wp_enqueue_style('main', get_template_directory_uri().'/style.css' );
 }
 
@@ -34,10 +35,13 @@ function my_widgets_init() {
 }
 
 // Disables loading CF7 files if not on contact page
-if (!is_page(72)) {
-	add_filter( 'wpcf7_load_css', '__return_false' );
-	add_filter( 'wpcf7_load_js',  '__return_false' );
-}
+add_filter( 'wpcf7_load_css', '__return_false' );
+add_filter( 'wpcf7_load_js',  '__return_false' );
+
+// Disables WP-JSON, Windows Live Writer, other shite
+remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'rsd_link');
 
 // Disable srcset attributes on images, it makes them blurry on large displays in 4.4+
 add_filter('wp_get_attachment_image_attributes', function($attr) {
@@ -75,9 +79,6 @@ function disable_emojicons_tinymce( $plugins ) {
 add_filter('edit_post_link', 'wpse_remove_edit_post_link');
 function wpse_remove_edit_post_link($link) { return ''; }
 
-// Sets maximum number of post revisions to avoid DB bloat
-if (!defined('WP_POST_REVISIONS')) define('WP_POST_REVISIONS', 5);
-
 // Logs DB Queries, Time Spent, and Memory Consumption
 function performance( $visible = false ) {
     $stat = sprintf(  '%d queries in %.3f seconds, using %.2fMB memory',
@@ -85,6 +86,6 @@ function performance( $visible = false ) {
         timer_stop(0, 3),
         memory_get_peak_usage() / 1024 / 1024
     );
-    echo $visible ? $stat : "<!-- {$stat} -->\r\n" ;
+    echo $visible ? $stat : "<!--{$stat}\r\nBuilt with HTML5, CSS3, JS, PHP7 and WordPress.\r\nSee something broken or have an idea? https://github.com/pschfr/paul-wp/ -->\r\n";
 }
 add_action( 'wp_footer', 'performance', 20 );

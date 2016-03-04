@@ -20,6 +20,18 @@ function initMap() {
 	console.log('map initiated and opened');
 }
 
+// Magic that disables pointer events on scroll, really improves performance
+var body = document.body, timer;
+window.addEventListener('scroll', function() {
+	clearTimeout(timer);
+	if(!body.classList.contains('disable-hover')) {
+		body.classList.add('disable-hover');
+	}
+	timer = setTimeout(function() {
+		body.classList.remove('disable-hover');
+	}, 100);
+}, false);
+
 // Takes any element with vh for height and makes it a pixel value to prevent mobile resizing issues
 function greedyJumbotron() {
 	var lockedHeight = $(this).height();
@@ -59,4 +71,11 @@ $('a.arrow').on('click', function(e) {
 $(function() {
 	// Locks header initally
 	$('header#header').each(greedyJumbotron);
+
+	// Pulls rendering information from the HTML, logs it in console
+	$('body').contents().filter(function(){
+		return this.nodeType == 8;
+	}).each(function(i, e) {
+		console.log(e.nodeValue);
+	});
 });

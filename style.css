@@ -41,6 +41,8 @@ p {
 .left  { float:  left; }
 .right { float: right; }
 .icon  { font-size: 8em; }
+.chevron { font-size: 1.5em; }
+.disable-hover, .disable-hover * { pointer-events: none !important; }
 .container {
 	max-width: 1200px;
 	max-width:   75vw;
@@ -87,14 +89,30 @@ header a.arrow {
 	animation:         bounce 5s infinite;
 	position: absolute;
 	text-align: center;
-	font-size: 24px;
-	font-size:  2vw;
 	width: 100%;
 	bottom: 1%;
 	left: 0%;
 }
+header a.arrow img { height: 2vw; }
+header a.home {
+	text-transform: uppercase;
+	padding: .5em 0 0 .5em;
+	position: absolute;
+	font-size: 24px;
+	font-size:  2vw;
+	left: 0;
+	top: 0;
+}
+header a.home img {
+	vertical-align: middle;
+	padding-right: .5em;
+	height: 2vw;
+}
 
-div#map-container { position: relative; }
+div#map-container {
+	background-color: #333;
+	position: relative;
+}
 div#map-container div#contact-map { height: 35rem; }
 div#map-container div#wpcf7-f71-p72-o1 {
 	left: 0; right: 0; bottom: 0; top: 0;
@@ -159,11 +177,10 @@ footer div.share a {
 	transition:         all .125s ease;
 	margin: 1rem 6px 3rem 6px;
 	display: inline-block;
-	font-size: 32px;
-	padding: 3px;
-	height: 40px;
-	width:  40px;
-	color: #fff;
+	padding: 5px;
+	height: 45px;
+	width:  45px;
+	color:  #fff;
 }
 footer div.share a.facebook { background-color: #3b5999; }
 footer div.share a.twitter  { background-color: #55acee; }
@@ -198,6 +215,10 @@ footer span.pulse::before {
 	header a.arrow {
 		font-size: 32px;
 		font-size:  6vw;
+	}
+	header a.home {
+		font-size: 24px;
+		font-size:  4vw;
 	}
 
 	.container {
@@ -249,27 +270,3 @@ footer span.pulse::before {
 		transform:         translateY(-5px);
 	}
 }
-
-@-webkit-keyframes pulse {
-	0%,100%,16%,32% {
-		-webkit-transform: scale3d(1,1,1);
-		transform:         scale3d(1,1,1);
-	}
-	24%,8% {
-		-webkit-transform: scale3d(1.1,1.1,1);
-		transform:         scale3d(1.1,1.1,1);
-	}
-}
-@keyframes pulse {
-	0%,100%,16%,32% {
-		-webkit-transform: scale3d(1,1,1);
-		-moz-transform:    scale3d(1,1,1);
-		-ms-transform:     scale3d(1,1,1);
-		transform:         scale3d(1,1,1)
-	}
-	24%,8% {
-		-webkit-transform: scale3d(1.1,1.1,1);
-		-moz-transform:    scale3d(1.1,1.1,1);
-		-ms-transform:     scale3d(1.1,1.1,1);
-		transform:         scale3d(1.1,1.1,1)
-	}
