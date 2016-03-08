@@ -12,14 +12,14 @@
 </div>
 <div class='grid__col--1-of-4 grid__col share'>
 Share with<br>
-<a href='https://facebook.com/sharer/sharer.php?u=<?php echo urlencode(site_url()); ?>' target='_blank' class='js-social-share facebook'><img src="<?php bloginfo('template_directory'); ?>/facebook.svg" alt="Facebook" /></a>
-<a href='https://twitter.com/intent/tweet/?text=Paul%20Schaefer,%20digital%20artist%20and%20web%20developer&via=pschfr&url=<?php echo urlencode(site_url()); ?>' target='_blank' class='js-social-share twitter'><img src="<?php bloginfo('template_directory'); ?>/twitter.svg" alt="Twitter" /></a>
-<a href='mailto:?to=%20&subject=Look%20at%20this%20rad%20website!&body=<?php echo urlencode(site_url()); ?>' class='email'><img src="<?php bloginfo('template_directory'); ?>/email.svg" alt="Email" /></a><br>
+<a href='https://facebook.com/sharer/sharer.php?u=<?php echo urlencode(site_url()); ?>' target='_blank' class='js-social-share facebook ion-social-facebook'></a>
+<a href='https://twitter.com/intent/tweet/?text=Paul%20Schaefer,%20digital%20artist%20and%20web%20developer&via=pschfr&url=<?php echo urlencode(site_url()); ?>' target='_blank' class='js-social-share twitter ion-social-twitter'></a>
+<a href='mailto:?to=%20&subject=Look%20at%20this%20rad%20website!&body=<?php echo urlencode(site_url()); ?>' class='email ion-ios-email'></a><br>
 Beam me up<br>
-<a class='arrow' href='#header'><img src="<?php bloginfo('template_directory'); ?>/chevron-up.svg" alt="Up" /></a>
+<a class='arrow ion-chevron-up' href='#header'></a>
 </div>
 <div class='grid__col--12-of-12 grid__col--centered grid__col'>
-<p>Enjoy your <?php echo date('l'); ?>.</p>
+<p>Made with <span class="ion-ios-heart pulse"></span> in Pittsburgh.<br>Enjoy your <?php echo date('l'); ?>.</p>
 </div>
 </div>
 </footer>

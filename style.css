@@ -40,8 +40,6 @@ p {
 .clear { clear:  both; }
 .left  { float:  left; }
 .right { float: right; }
-.icon  { font-size: 8em; }
-.chevron { font-size: 1.5em; }
 .disable-hover, .disable-hover * { pointer-events: none !important; }
 .container {
 	max-width: 1200px;
@@ -51,6 +49,11 @@ p {
 .centered, .grid__col--centered {
 	text-align: center;
 	display: block;
+}
+.huge {
+	text-align: center;
+	display: block;
+	font-size: 8em;
 }
 
 header {
@@ -177,6 +180,7 @@ footer div.share a {
 	transition:         all .125s ease;
 	margin: 1rem 6px 3rem 6px;
 	display: inline-block;
+	font-size: 35px;
 	padding: 5px;
 	height: 45px;
 	width:  45px;
@@ -202,6 +206,7 @@ footer span.pulse::before {
 	font-size: 125%;
 	color: #F33425;
 }
+
 
 @media screen and (max-width: 768px) {
 	header div.wrap { font-size: 8vw; }
@@ -231,10 +236,12 @@ footer span.pulse::before {
 
 	footer div.share { margin-top: 2em; }
 }
+
 @media screen and (max-width: 768px) and (orientation: landscape) {
 	body.home header div.wrap { font-size: 6vw; }
 	body.home header h3 { line-height: 1.15; }
 }
+
 
 @-webkit-keyframes bounce {
 	0%, 20%, 50%, 80%, 100% {
@@ -268,5 +275,30 @@ footer span.pulse::before {
 		-moz-transform:    translateY(-5px);
 		-ms-transform:     translateY(-5px);
 		transform:         translateY(-5px);
+	}
+}
+
+@-webkit-keyframes pulse {
+	0%,100%,16%,32% {
+		-webkit-transform: scale3d(1,1,1);
+		transform:         scale3d(1,1,1);
+	}
+	24%,8% {
+		-webkit-transform: scale3d(1.1,1.1,1);
+		transform:         scale3d(1.1,1.1,1);
+	}
+}
+@keyframes pulse {
+	0%,100%,16%,32% {
+		-webkit-transform: scale3d(1,1,1);
+		-moz-transform:    scale3d(1,1,1);
+		-ms-transform:     scale3d(1,1,1);
+		transform:         scale3d(1,1,1)
+	}
+	24%,8% {
+		-webkit-transform: scale3d(1.1,1.1,1);
+		-moz-transform:    scale3d(1.1,1.1,1);
+		-ms-transform:     scale3d(1.1,1.1,1);
+		transform:         scale3d(1.1,1.1,1)
 	}
 }

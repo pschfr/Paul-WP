@@ -11,5 +11,6 @@
 <meta property="og:description" content="Paul Schaefer is a web designer and developer living in Pittsburgh, PA." />
 <title><?php bloginfo('name'); ?>, <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 <?php wp_head(); ?>
+<?php include_once(get_template_directory_uri() . "/icons.svg"); ?>
 </head>
 <body <?php body_class(); ?>>

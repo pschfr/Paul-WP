@@ -17,11 +17,13 @@ function my_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles', 11 );
 function theme_enqueue_styles() {
+	wp_enqueue_style('ionicons',  '//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
 	wp_enqueue_style('normalize', '//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css');
 	wp_enqueue_style('toast',     '//cdnjs.cloudflare.com/ajax/libs/toast-css/1.1.0/grid.min.css');
 	wp_enqueue_style('main', get_template_directory_uri().'/style.css' );
 }
 
+// Adds widget area
 add_action('widgets_init', 'my_widgets_init');
 function my_widgets_init() {
 	register_sidebar(array(
@@ -37,6 +39,12 @@ function my_widgets_init() {
 // Disables loading CF7 files if not on contact page
 add_filter( 'wpcf7_load_css', '__return_false' );
 add_filter( 'wpcf7_load_js',  '__return_false' );
+
+// Custom ajax loader for CF7
+add_filter('wpcf7_ajax_loader', 'my_wpcf7_ajax_loader');
+function my_wpcf7_ajax_loader () {
+	return  get_bloginfo('template_directory') . '/bert.gif';
+}
 
 // Disables WP-JSON, Windows Live Writer, other shite
 remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
