@@ -2,7 +2,7 @@
 <footer id="footer">
 <div class='grid container'>
 <div class='grid__col--1-of-4 grid__col'>
-<p>NASA is not about the ‘Adventure of Human Space Exploration’…We won’t be doing it just to get out there in space – we’ll be doing it because the things we learn out there will be making life better for a lot of people who won’t be able to go.</p>
+<?php wp_nav_menu(array('theme_location' => 'footer_menu')); ?>
 </div>
 <div class='grid__col--1-of-4 grid__col'>
 <p>We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win.</p>

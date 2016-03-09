@@ -36,6 +36,12 @@ function my_widgets_init() {
 	));
 }
 
+// Adds menu area
+add_action('init', 'my_menus_init');
+function my_menus_init() {
+	register_nav_menu('footer_menu',__('Footer Menu'));
+}
+
 // Disables loading CF7 files if not on contact page
 add_filter( 'wpcf7_load_css', '__return_false' );
 add_filter( 'wpcf7_load_js',  '__return_false' );
