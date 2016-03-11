@@ -100,6 +100,6 @@ function performance( $visible = false ) {
         timer_stop(0, 3),
         memory_get_peak_usage() / 1024 / 1024
     );
-    echo $visible ? $stat : "<!--{$stat}\r\nBuilt with HTML5, CSS3, JS, PHP7 and WordPress.\r\nSee something broken or have an idea? https://github.com/pschfr/paul-wp/ -->\r\n";
+    echo $visible ? $stat : "<!--{$stat}\r\nSee something broken or have an idea? https://github.com/pschfr/paul-wp/ -->\r\n";
 }
 add_action( 'wp_footer', 'performance', 20 );
