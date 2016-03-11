@@ -211,11 +211,14 @@ footer span.pulse::before {
 	-webkit-animation: pulse 1.5s linear infinite;
 	-moz-animation:    pulse 1.5s linear infinite;
 	animation:         pulse 1.5s linear infinite;
-	font-size: 125%;
 	color: #F33425;
 }
-footer div.grid__col--centered { margin-top: 30px; }
-
+footer span { font-size: 125%; }
+footer span.ion-social-github {
+	padding-right: 5px;
+	color: #fff;
+}
+footer a.github:hover { text-decoration: underline; }
 
 @media screen and (max-width: 768px) {
 	header div.wrap { font-size: 8vw; }

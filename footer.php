@@ -19,7 +19,7 @@ Beam me up<br>
 <a class='arrow ion-chevron-up' href='#header'></a>
 </div>
 <div class='grid__col--12-of-12 grid__col--centered grid__col'>
-<p>Made with <span class="ion-heart pulse"></span> in Pittsburgh.<br>Enjoy your <?php echo date('l'); ?>.</p>
+<p>Made with <span class="ion-heart pulse"></span> in Pittsburgh.<br>Peep the source on <a href="https://github.com/pschfr/paul-wp" target="_blank" class="github"><span class="ion-social-github"></span>GitHub</a>.</p>
 </div>
 </div>
 </footer>
