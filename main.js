@@ -3,6 +3,13 @@ particlesJS.load('particles-cont', '/dev/wp-content/themes/paul/particlesjs-conf
 	console.log('particles.js config loaded');
 });
 
+// Loads webfonts from Google and IonIcons
+WebFont.load({
+	google: { families: [ 'Roboto:400,400italic,700', 'Cardo:400,400italic,700' ] },
+	custom: { families: [ 'ionicons' ] },
+	active: function (){ console.log('webfonts activated'); }
+});
+
 function initMap() {
 	// https://snazzymaps.com/style/38/shades-of-grey
 	// Edited to remove labels
@@ -59,12 +66,12 @@ $("a.js-social-share").on("click", function(e) {
 // Does magic to send user to location in page
 $('a.arrow').on('click', function(e) {
 	e.preventDefault();
+	// in here to prevent weird resizing errors on mobile due to auto-hiding the URL bar
+	$('header#header').each(greedyJumbotron);
 	var href = $(this).attr('href');
 	$('html, body').animate({
 		scrollTop: $(href).offset().top
 	}, 500);
-	// in here to prevent weird resizing errors on mobile due to auto-hiding the URL bar
-	$('header#header').each(greedyJumbotron);
 	console.log('scrolled to ' + href);
 });
 
