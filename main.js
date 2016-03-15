@@ -83,6 +83,6 @@ $(function() {
 	$('body').contents().filter(function(){
 		return this.nodeType == 8;
 	}).each(function(i, e) {
-		console.log(e.nodeValue);
+		console.log('%c%s', 'font-size:18pt', e.nodeValue);
 	});
 });

@@ -8,13 +8,20 @@ License URI: https://www.gnu.org/licenses/gpl.html
 @charset 'UTF-8';
 html {
 	font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
-	-webkit-animation: fadeIn 1s .5s 1 both;
-	-moz-animation:    fadeIn 1s .5s 1 both;
-	animation:         fadeIn 1s .5s 1 both;
 	box-sizing: border-box;
 	color: #333;
 }
 *, *:before, *:after { box-sizing: inherit; }
+
+.wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading h5, .wf-loading h6, .wf-loading p, .wf-loading a { opacity: 0; }
+.ie.wf-loading h1, .ie.wf-loading h2, .ie.wf-loading h3, .ie.wf-loading h4, .ie.wf-loading h5, .ie.wf-loading h6, .ie.wf-loading p, .ie.wf-loading a { visibility: hidden; }
+.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6, .wf-active p, .wf-active a {
+	-webkit-transition: opacity .67s ease-in-out .33s;
+	-moz-transition: 	opacity .67s ease-in-out .33s;
+	transition: 		opacity .67s ease-in-out .33s;
+	visibility: visible;
+	opacity: 1;
+}
 
 img { max-width: 100%; }
 a, a:hover, a:visited {
@@ -233,14 +240,8 @@ footer a.github:hover { text-decoration: underline; }
 		margin: 0 auto;
 		display: block;
 	}
-	header a.arrow {
-		font-size: 32px;
-		font-size:  5vw;
-	}
-	header a.home {
-		font-size: 24px;
-		font-size:  5vw;
-	}
+	header a.arrow { font-size: 7vw; }
+	header a.home  { font-size: 5vw; }
 
 	.container {
 		max-width: 90%;
@@ -300,8 +301,8 @@ footer a.github:hover { text-decoration: underline; }
 		transform:         scale3d(1,1,1);
 	}
 	24%,8% {
-		-webkit-transform: scale3d(1.25,1.25,1);
-		transform:         scale3d(1.25,1.25,1);
+		-webkit-transform: scale3d(1.2,1.2,1);
+		transform:         scale3d(1.2,1.2,1);
 	}
 }
 @keyframes pulse {
@@ -312,18 +313,9 @@ footer a.github:hover { text-decoration: underline; }
 		transform:         scale3d(1,1,1)
 	}
 	24%,8% {
-		-webkit-transform: scale3d(1.25,1.25,1);
-		-moz-transform:    scale3d(1.25,1.25,1);
-		-ms-transform:     scale3d(1.25,1.25,1);
-		transform:         scale3d(1.25,1.25,1)
+		-webkit-transform: scale3d(1.2,1.2,1);
+		-moz-transform:    scale3d(1.2,1.2,1);
+		-ms-transform:     scale3d(1.2,1.2,1);
+		transform:         scale3d(1.2,1.2,1)
 	}
-}
-
-@-webkit-keyframes fadeIn {
-	0%   { opacity:   0%; }
-	100% { opacity: 100%; }
-}
-@keyframes fadeIn {
-	0%   { opacity:   0%; }
-	100% { opacity: 100%; }
 }

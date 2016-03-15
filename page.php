@@ -7,7 +7,7 @@
 <div class="wrap">
 <h1 class="entry-title"><?php the_title(); ?></h1>
 </div>
-<a href="<?php echo site_url(); ?>" class="home"><span class="ion ion-chevron-left"></span> Home</a>
+<a href="<?php echo site_url(); ?>" class="home"><span class="ion ion-home"></span> Home</a>
 </header>
 <section class="entry-content">
 <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
