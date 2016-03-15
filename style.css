@@ -8,6 +8,9 @@ License URI: https://www.gnu.org/licenses/gpl.html
 @charset 'UTF-8';
 html {
 	font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+	-webkit-animation: fadeIn 1s .5s 1 both;
+	-moz-animation:    fadeIn 1s .5s 1 both;
+	animation:         fadeIn 1s .5s 1 both;
 	box-sizing: border-box;
 	color: #333;
 }
@@ -314,4 +317,13 @@ footer a.github:hover { text-decoration: underline; }
 		-ms-transform:     scale3d(1.25,1.25,1);
 		transform:         scale3d(1.25,1.25,1)
 	}
+}
+
+@-webkit-keyframes fadeIn {
+	0%   { opacity:   0%; }
+	100% { opacity: 100%; }
+}
+@keyframes fadeIn {
+	0%   { opacity:   0%; }
+	100% { opacity: 100%; }
 }
