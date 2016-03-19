@@ -9,7 +9,7 @@
 </div>
 <a href="<?php echo site_url(); ?>" class="home"><span class="ion ion-home"></span> Home</a>
 </header>
-<section class="entry-content">
+<section class="entry-content grid container">
 <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 <?php the_content(); ?>
 <div class="entry-links"><?php wp_link_pages(); ?></div>
