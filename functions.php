@@ -8,7 +8,7 @@ function my_scripts() {
 	wp_register_script('jquery',   ( '//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'), false, '', true);
 	wp_enqueue_script('main', get_template_directory_uri() . '/main.js', array('jquery'), '', true );
 
-	if( is_page(72) ) {
+	if( is_page(9) ) {
 		// Loads in map and contact form scripts on contact page only
 		wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?callback=initMap', array('jquery', 'main'), '', true);
 		wpcf7_enqueue_scripts();

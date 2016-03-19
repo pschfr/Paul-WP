@@ -1,5 +1,5 @@
 // Initiates particles, done before jQuery DOM loads for faster page loads
-particlesJS.load('particles-cont', '/dev/wp-content/themes/paul/particlesjs-config.json', function() {
+particlesJS.load('particles-cont', '/wp-content/themes/paul/particlesjs-config.json', function() {
 	console.log('particles.js config loaded');
 });
 
