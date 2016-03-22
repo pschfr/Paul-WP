@@ -68,11 +68,10 @@ $('a.arrow').on('click', function(e) {
 	e.preventDefault();
 	// in here to prevent weird resizing errors on mobile due to auto-hiding the URL bar
 	$('header#header').each(greedyJumbotron);
-	var href = $(this).attr('href');
 	$('html, body').animate({
-		scrollTop: $(href).offset().top
+		scrollTop: $($(this).attr('href')).offset().top
 	}, 500);
-	console.log('scrolled to ' + href);
+	console.log('scrolled to ' + $(this).attr('href'));
 });
 
 $(function() {
