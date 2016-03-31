@@ -1,9 +1,7 @@
 /*
 Theme Name: Paul
 Author: Paul Schaefer
-Author URI: http://pschfr.net/
-License: GNU General Public License
-License URI: https://www.gnu.org/licenses/gpl.html
+Author URI: https://paulmakesthe.net/
 */
 @charset 'UTF-8';
 html {
@@ -12,7 +10,6 @@ html {
 	color: #333;
 }
 *, *:before, *:after { box-sizing: inherit; }
-
 .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading h5, .wf-loading h6, .wf-loading p, .wf-loading a, .wf-loading span { opacity: 0; }
 .wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6, .wf-active p, .wf-active a, .wf-loading span {
 	-webkit-transition: opacity .67s ease-in-out .33s;
@@ -21,7 +18,6 @@ html {
 	visibility: visible;
 	opacity: 1;
 }
-
 img { max-width: 100%; }
 a, a:hover, a:visited {
 	text-decoration: none;
@@ -46,7 +42,6 @@ p {
 	line-height:  1.6;
 	margin: 0;
 }
-
 .clear { clear:  both; }
 .left  { float:  left; }
 .right { float: right; }
@@ -61,11 +56,11 @@ p {
 	display: block;
 }
 .huge {
+	display: block !important;
 	text-align: center;
-	display: block;
+	margin-top: .5em;
 	font-size: 8em;
 }
-
 header {
 	background-color: #212121;
 	position: relative;
@@ -75,7 +70,6 @@ header {
 	color: #fff;
 }
 body.home header { height: 100vh; }
-
 header div#particles-cont {
 	position: absolute;
 	height: 100%;
@@ -122,7 +116,6 @@ header a.home img {
 	padding-right: .5em;
 	height: 2vw;
 }
-
 div#map-container {
 	background-color: #212121;
 	position: relative;
@@ -158,7 +151,7 @@ div#map-container div#wpcf7-f4-p9-o1 form input[type="submit"], div#map-containe
 div#map-container div.wpcf7-response-output, div#map-container div.wpcf7 img.ajax-loader { margin: 0; }
 div#map-container span.wpcf7-not-valid-tip,  div#map-container div.gm-style-cc, div#map-container div.gm-style a[href^="https://maps.google.com/"] div img { display: none; }
 div#map-container div#wpcf7-f4-p9-o1 form input.wpcf7-not-valid { border-color: red; }
-
+body.page-id-9 section#content section.entry-content.container  { max-width: 100%; }
 ::-webkit-input-placeholder {
 	font-style: italic;
 	color: #ddd;
@@ -172,9 +165,7 @@ div#map-container div#wpcf7-f4-p9-o1 form input.wpcf7-not-valid { border-color: 
 	font-style: italic;
 	color: #ddd;
 }
-
 section#contact h3 { font-size: 1.75em; }
-
 footer {
 	background-color: #212121;
 	position: relative;
@@ -227,7 +218,6 @@ footer a.github:hover { text-decoration: underline; }
 @media screen and (max-width: 768px) {
 	header div.wrap { font-size: 8vw; }
 	body.home header div.wrap { font-size: 11vw; }
-
 	header h1 { margin: 0; }
 	header span.amp {
 		margin: 0 auto;
@@ -235,40 +225,15 @@ footer a.github:hover { text-decoration: underline; }
 	}
 	header a.arrow { font-size: 7vw; }
 	header a.home  { font-size: 5vw; }
-
 	.container {
 		max-width: 90%;
 		max-width: 90vw;
 	}
 	.grid__col { padding-left: 0 !important; }
-
 	div#map-container div#wpcf7-f4-p9-o1 { width: 90%; }
-
 	footer div.share { margin-top: 2em; }
 }
-
 @media screen and (max-width: 768px) and (orientation: landscape) {
 	body.home header div.wrap { font-size: 6vw; }
 	body.home header h3 { line-height: 1.15; }
-}
-
-
-@-webkit-keyframes bounce {
-	0%, 20%, 50%, 80%, 100% { -webkit-transform: translateY(0); }
-	40% { -webkit-transform: translateY(-10px);	}
-	60% { -webkit-transform: translateY( -5px); }
-}
-@keyframes bounce {
-	0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-	40% { transform: translateY(-10px); }
-	60% { transform: translateY( -5px); }
-}
-
-@-webkit-keyframes pulse {
-	0%, 100%, 16%, 32% { -webkit-transform: scale3d(1, 1, 1); }
-	24%, 8%            { -webkit-transform: scale3d(1.2, 1.2, 1); }
-}
-@keyframes pulse {
-	0%, 100%, 16%, 32% { transform: scale3d(1, 1, 1); }
-	24%, 8%            { transform: scale3d(1.2, 1.2, 1); }
 }

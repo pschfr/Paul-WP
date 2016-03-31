@@ -6,9 +6,20 @@ particlesJS.load('particles-cont', '/wp-content/themes/paul/particlesjs-config.j
 // Loads webfonts from Google and IonIcons
 WebFont.load({
 	google: { families: [ 'Roboto:400,400italic,700', 'Cardo:400,400italic,700' ] },
-	custom: { families: [ 'ionicons' ] },
-	active: function (){ console.log('webfonts activated'); }
+	custom: { families: [ 'ionicons' ], urls: [ 'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css' ] }, // TODO: only load the icons I use here?
+	active: function (){
+		sessionStorage.fonts = true; // caches the fonts in sessionStorage
+		console.log('webfonts activated');
+	}
 });
+
+// Checks to see if font is in sessionStorage, loads faster if already available
+(function() {
+	if (sessionStorage.fonts) {
+		document.documentElement.classList.add('wf-active');
+		console.log("fonts loaded from cache");
+	} else { console.log("no fonts in cache"); }
+})();
 
 function initMap() {
 	// https://snazzymaps.com/style/38/shades-of-grey
@@ -82,6 +93,6 @@ $(function() {
 	$('body').contents().filter(function(){
 		return this.nodeType == 8;
 	}).each(function(i, e) {
-		console.log('%c%s', 'font-size:18pt', e.nodeValue);
+		console.log('%c%s', 'font-weight:bold;', e.nodeValue);
 	});
 });
