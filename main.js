@@ -14,7 +14,7 @@ particlesJS.load('particles-cont', '/wp-content/themes/paul/particlesjs-config.j
 // Loads webfonts from Google and IonIcons
 WebFont.load({
 	google: { families: [ 'Roboto:400,400italic,700', 'Cardo:400,400italic,700' ] },
-	custom: { families: [ 'ionicons' ], urls: [ 'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css' ] }, // TODO: only load the icons I use here?
+	custom: { families: [ 'ionicons' ], urls: [ 'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css' ] },
 	active: function (){
 		sessionStorage.fonts = true; // caches the fonts in sessionStorage
 		console.log('webfonts activated');
@@ -22,10 +22,8 @@ WebFont.load({
 });
 
 function initMap() {
-	// https://snazzymaps.com/style/38/shades-of-grey
-	// Edited to remove labels
+	// https://snazzymaps.com/style/38/shades-of-grey - edited to remove labels
 	var styleArray = [{"featureType":"all","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative.country","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.province","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.neighborhood","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"landscape.natural","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.attraction","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.government","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
-
 	// Set map location and other settings
 	var map = new google.maps.Map(document.getElementById('contact-map'), {
 		center: {lat: 40.440, lng: -79.996},
@@ -50,7 +48,7 @@ window.addEventListener('scroll', function() {
 	}, 100);
 }, false);
 
-// Takes any element with vh for height and makes it a pixel value to prevent mobile resizing issues
+// Takes any element with vh for height and makes it a pixel value to prevent mobile resizing issues TODO: Rewrite in vanilla JS
 function greedyJumbotron() {
 	var lockedHeight = $(this).height();
 	$(window).resize(function() {
@@ -63,7 +61,7 @@ function greedyJumbotron() {
 	console.log('locked to ' + lockedHeight + 'px');
 }
 
-// Much faster than loading in tweet and like buttons, just send URL to share URL
+// Much faster than loading in tweet and like buttons, just send URL to share URL TODO: Rewrite in vanilla JS
 $("a.js-social-share").on("click", function(e) {
 	e.preventDefault();
 	function windowPopup(url, width, height) {
@@ -74,7 +72,7 @@ $("a.js-social-share").on("click", function(e) {
 	console.log('share window popped up');
 });
 
-// Does magic to send user to location in page
+// Does magic to send user to location in page TODO: Rewrite in vanilla JS
 $('a.arrow').on('click', function(e) {
 	e.preventDefault();
 	// in here to prevent weird resizing errors on mobile due to auto-hiding the URL bar
@@ -88,8 +86,7 @@ $('a.arrow').on('click', function(e) {
 $(function() {
 	// Locks header initally
 	$('header#header').each(greedyJumbotron);
-
-	// Pulls rendering information from the HTML, logs it in console
+	// Pulls rendering information from the HTML, logs it in console TODO: Rewrite in vanilla JS
 	$('body').contents().filter(function(){
 		return this.nodeType == 8;
 	}).each(function(i, e) {
