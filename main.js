@@ -3,6 +3,14 @@ particlesJS.load('particles-cont', '/wp-content/themes/paul/particlesjs-config.j
 	console.log('particles.js config loaded');
 });
 
+// Checks to see if fonts are in sessionStorage, loads faster if cached
+(function() {
+	if (sessionStorage.fonts) {
+		document.documentElement.classList.add('wf-active');
+		console.log("fonts loaded from cache");
+	} else { console.log("no fonts in cache"); }
+})();
+
 // Loads webfonts from Google and IonIcons
 WebFont.load({
 	google: { families: [ 'Roboto:400,400italic,700', 'Cardo:400,400italic,700' ] },
@@ -12,14 +20,6 @@ WebFont.load({
 		console.log('webfonts activated');
 	}
 });
-
-// Checks to see if font is in sessionStorage, loads faster if already available
-(function() {
-	if (sessionStorage.fonts) {
-		document.documentElement.classList.add('wf-active');
-		console.log("fonts loaded from cache");
-	} else { console.log("no fonts in cache"); }
-})();
 
 function initMap() {
 	// https://snazzymaps.com/style/38/shades-of-grey
