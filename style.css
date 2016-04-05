@@ -60,6 +60,7 @@ p {
 	text-align: center;
 	margin-top: .5em;
 	font-size: 8em;
+	color: #212121;
 }
 header {
 	background-color: #212121;
@@ -167,38 +168,37 @@ body.page-id-9 section#content section.entry-content.container  { max-width: 100
 }
 section#contact h3 { font-size: 1.75em; }
 footer {
+	text-transform: uppercase;
 	background-color: #212121;
 	position: relative;
+	text-align: center;
+	font-weight: bold;
 	padding: 50px 0 0;
 	font-size: .8em;
-	color:  #b2b2b2;
+	color:  #ddd;
 }
 footer ul, footer ul li {
-	text-transform: uppercase;
-	display: inline-block;
-	font-weight: bold;
+	text-align: left;
 	list-style: none;
-	padding: 0 1.5em;
-	margin: .5em 0;
+	line-height: 2;
+	padding: 0;
+	margin:  0;
 }
-footer div.share {
-	text-transform: uppercase;
-	text-align: center;
-}
-footer div.share a {
+footer a.icon {
 	-webkit-transition: all .125s ease;
 	transition:         all .125s ease;
 	margin: 1rem 6px 3rem 6px;
 	display: inline-block;
+	font-weight: normal;
 	font-size: 35px;
 	width: 35px;
 	color: #fff;
 }
-footer div.share a:hover {
+footer a.icon:hover {
 	-webkit-transform: scale(1.25,1.25);
 	transform:         scale(1.25,1.25);
 }
-footer div.share a:focus {
+footer a.icon:focus {
 	-webkit-transform: scale(1.1,1.1);
 	transform:         scale(1.1,1.1);
 }
@@ -219,7 +219,6 @@ footer div.share a:focus {
 	}
 	.grid__col { padding-left: 0 !important; }
 	div#map-container div#wpcf7-f4-p9-o1 { width: 90%; }
-	footer div.share { margin-top: 2em; }
 }
 @media screen and (max-width: 768px) and (orientation: landscape) {
 	body.home header div.wrap { font-size: 6vw; }
