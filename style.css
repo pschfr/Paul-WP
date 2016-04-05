@@ -166,7 +166,11 @@ body.page-id-9 section#content section.entry-content.container  { max-width: 100
 	font-style: italic;
 	color: #ddd;
 }
-section#contact h3 { font-size: 1.75em; }
+section#contact h3 {
+	font-size: 1.75em;
+	margin: 3em 0;
+}
+section#contact h3 a { font-weight:  bold; }
 footer {
 	text-transform: uppercase;
 	background-color: #212121;
@@ -184,6 +188,7 @@ footer ul, footer ul li {
 	padding: 0;
 	margin:  0;
 }
+footer ul li a:hover { text-decoration: underline; }
 footer a.icon {
 	-webkit-transition: all .125s ease;
 	transition:         all .125s ease;
@@ -198,11 +203,6 @@ footer a.icon:hover {
 	-webkit-transform: scale(1.25,1.25);
 	transform:         scale(1.25,1.25);
 }
-footer a.icon:focus {
-	-webkit-transform: scale(1.1,1.1);
-	transform:         scale(1.1,1.1);
-}
-
 @media screen and (max-width: 768px) {
 	header div.wrap { font-size: 8vw; }
 	body.home header div.wrap { font-size: 11vw; }
@@ -219,6 +219,14 @@ footer a.icon:focus {
 	}
 	.grid__col { padding-left: 0 !important; }
 	div#map-container div#wpcf7-f4-p9-o1 { width: 90%; }
+	footer ul {
+		margin-bottom: 3rem;
+		text-align:  center;
+	}
+	footer ul li {
+		display: inline-block;
+		padding: 0 1rem;
+	}
 }
 @media screen and (max-width: 768px) and (orientation: landscape) {
 	body.home header div.wrap { font-size: 6vw; }
