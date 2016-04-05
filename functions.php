@@ -98,3 +98,7 @@ function performance($visible = false) {
     );
     echo $visible ? $stat : "<!--{$stat}\r\nSee something broken or have an idea? https://github.com/pschfr/paul-wp/ -->\r\n";
 }
+
+// Custom WordPress Admin Footer
+add_filter('admin_footer_text', 'remove_footer_admin');
+function remove_footer_admin () { echo 'Don\'t forget to purge the cache, dumbass.'; }

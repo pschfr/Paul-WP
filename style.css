@@ -7,9 +7,10 @@ Author URI: https://paulmakesthe.net/
 html {
 	font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
-	color: #333;
+	color: #212121;
 }
 *, *:before, *:after { box-sizing: inherit; }
+.disable-hover, .disable-hover * { pointer-events: none !important; }
 .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading h5, .wf-loading h6, .wf-loading p, .wf-loading a, .wf-loading span { opacity: 0; }
 .wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6, .wf-active p, .wf-active a, .wf-loading span {
 	-webkit-transition: opacity .67s ease-in-out .33s;
@@ -39,13 +40,12 @@ h4 {
 }
 p {
 	padding-bottom: 1em;
-	line-height:  1.6;
+	line-height: 1.4;
 	margin: 0;
 }
 .clear { clear:  both; }
 .left  { float:  left; }
 .right { float: right; }
-.disable-hover, .disable-hover * { pointer-events: none !important; }
 .container {
 	max-width: 1200px;
 	max-width:   75vw;
@@ -58,8 +58,8 @@ p {
 .huge {
 	display: block !important;
 	text-align: center;
-	margin-top: .5em;
-	font-size: 8em;
+	margin-top: 30px;
+	font-size: 6.5em;
 	color: #212121;
 }
 header {
@@ -92,8 +92,6 @@ header h1 {
 body.home header h1 { margin-bottom: .67em; }
 header span.amp { display: inline-block; }
 header a.arrow {
-	-webkit-animation: bounce 5s infinite;
-	animation:         bounce 5s infinite;
 	position: absolute;
 	text-align: center;
 	font-size:  28px;
