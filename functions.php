@@ -54,6 +54,10 @@ function my_wpcf7_ajax_loader () {
 remove_action('wp_head', 'rest_output_link_wp_head', 10);
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+remove_action('wp_head', 'rel_canonical');
+remove_action('wp_head', 'wp_oembed_add_discovery_links');
+remove_action('template_redirect', 'rest_output_link_header', 11, 0);
 
 // Disable srcset attributes on images, it makes them blurry on large displays in 4.4+
 add_filter('wp_get_attachment_image_attributes', function($attr) {
@@ -87,6 +91,10 @@ function disable_emojicons_tinymce($plugins) {
 // Disable edit this link on pages when logged in
 add_filter('edit_post_link', 'wpse_remove_edit_post_link');
 function wpse_remove_edit_post_link($link) { return ''; }
+
+// Removes 'text/css' from enqued stylesheets
+add_filter('style_loader_tag', 'html5_style_remove');
+function html5_style_remove($tag) { return preg_replace('~\s+type=["\'][^"\']++["\']~', '', $tag); }
 
 // Logs DB Queries, Time Spent, and Memory Consumption
 add_action( 'wp_footer', 'performance', 20 );
