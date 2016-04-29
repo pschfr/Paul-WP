@@ -6,7 +6,7 @@ function theme_enqueue_scripts() {
 	wp_enqueue_script('particles',  '//cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js', '', '',  true);
 	wp_enqueue_script('webfonts',   '//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.22/webfontloader.js', '', '', true);
 	wp_register_script('jquery',   ('//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'), false, '', true);
-	wp_enqueue_script('main', get_template_directory_uri() . '/main.js', array('jquery'), '', true );
+	wp_enqueue_script('main', get_template_directory_uri() . '/includes/main.js', array('jquery'), '', true );
 	if( is_page(9) ) { // Loads in map and contact form scripts on contact page only
 		wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?callback=initMap', array('jquery', 'main'), '', true);
 		wpcf7_enqueue_scripts();
@@ -47,7 +47,7 @@ add_filter('wpcf7_load_js',  '__return_false');
 // Custom ajax loader for CF7, has to be GIF
 add_filter('wpcf7_ajax_loader', 'my_wpcf7_ajax_loader');
 function my_wpcf7_ajax_loader () {
-	return  get_bloginfo('template_directory') . '/bert.gif';
+	return  get_bloginfo('template_directory') . '/includes/bert.gif';
 }
 
 // Disables WP-JSON, Windows Live Writer, other shit

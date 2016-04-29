@@ -21,6 +21,7 @@ html {
 }
 img { max-width: 100%; }
 a, a:hover, a:visited {
+	border-bottom: 1px dotted;
 	text-decoration: none;
 	color: inherit;
 }
@@ -29,10 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	line-height: 1;
 }
-h2 {
-	font-size: 3em;
-	margin: 1em 0;
-}
+h2 { font-size: 3em; }
 h4 {
 	text-transform: uppercase;
 	font-family: inherit;
@@ -86,6 +84,7 @@ header h1 {
 }
 body.home header h1 { margin-bottom: .67em; }
 header span.amp { display: inline-block; }
+header a, header a:hover { border: none; }
 header a.arrow {
 	position: absolute;
 	text-align: center;
@@ -159,6 +158,10 @@ body.page-id-9 section#content section.entry-content.container  { max-width: 100
 	font-style: italic;
 	color: #ddd;
 }
+section#about { padding: 3rem 0; }
+section#about h2 { margin: 0 0 1rem; }
+section#about p.peace { font-size: 2rem; }
+section#stats img  { margin-top: 6rem; }
 section#contact h3 {
 	font-size: 1.75em;
 	margin: 3em 0;
@@ -182,6 +185,7 @@ footer ul, footer ul li {
 	margin:  0;
 }
 footer ul li a:hover { text-decoration: underline; }
+footer a, footer a:hover { border: none; }
 footer a.icon {
 	-webkit-transition: all .125s ease;
 	transition:         all .125s ease;

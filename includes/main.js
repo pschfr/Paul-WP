@@ -1,5 +1,5 @@
 // Initiates particles, done before jQuery DOM loads for faster page loads
-particlesJS.load('particles-cont', '/wp-content/themes/paul/particlesjs-config.json', function() {
+particlesJS.load('particles-cont', '/wp-content/themes/paul/includes/particlesjs-config.json', function() {
 	console.log('particles.js config loaded');
 });
 
@@ -14,7 +14,7 @@ particlesJS.load('particles-cont', '/wp-content/themes/paul/particlesjs-config.j
 // Loads webfonts from Google and IonIcons
 WebFont.load({
 	google: { families: [ 'Roboto:400,400italic,700', 'Amiri:400,400italic,700' ] },
-	custom: { families: [ 'ionicons' ], urls: [ 'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css' ] },
+	custom: { families: [ 'ionicons' ], urls: [ '//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css' ] },
 	active: function (){
 		sessionStorage.fonts = true; // caches the fonts in sessionStorage
 		console.log('webfonts activated');
