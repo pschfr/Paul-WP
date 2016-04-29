@@ -1,8 +1,8 @@
 <?php
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 function theme_enqueue_scripts() {
-	wp_deregister_script('jquery');
-	wp_deregister_script('wp-embed');
+	wp_deregister_script('jquery');   // Allows me to use more recent version
+	wp_deregister_script('wp-embed'); // Not necessary here either
 	wp_enqueue_script('particles',  '//cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js', '', '',  true);
 	wp_enqueue_script('webfonts',   '//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.22/webfontloader.js', '', '', true);
 	wp_register_script('jquery',   ('//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'), false, '', true);
@@ -91,10 +91,6 @@ function disable_emojicons_tinymce($plugins) {
 // Disable edit this link on pages when logged in
 add_filter('edit_post_link', 'wpse_remove_edit_post_link');
 function wpse_remove_edit_post_link($link) { return ''; }
-
-// Removes 'text/css' from enqued stylesheets
-add_filter('style_loader_tag', 'html5_style_remove');
-function html5_style_remove($tag) { return preg_replace('~\s+type=["\'][^"\']++["\']~', '', $tag); }
 
 // Logs DB Queries, Time Spent, and Memory Consumption
 add_action( 'wp_footer', 'performance', 20 );

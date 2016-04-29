@@ -13,7 +13,7 @@ particlesJS.load('particles-cont', '/wp-content/themes/paul/includes/particlesjs
 
 // Loads webfonts from Google and IonIcons
 WebFont.load({
-	google: { families: [ 'Roboto:400,400italic,700', 'Amiri:400,400italic,700' ] },
+	google: { families: [ 'Roboto:400,400italic,700', 'Cardo:400,400italic,700' ] },
 	custom: { families: [ 'ionicons' ], urls: [ '//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css' ] },
 	active: function (){
 		sessionStorage.fonts = true; // caches the fonts in sessionStorage
