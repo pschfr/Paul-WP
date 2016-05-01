@@ -4,7 +4,7 @@
 
 ![https://paulmakesthe.net/](screenshot.png)
 
-[Toast](https://github.com/daneden/Toast) for the responsive grid, and [particles.js](https://github.com/VincentGarreau/particles.js/).
+[daneden/Toast](https://github.com/daneden/Toast) for the responsive grid, and [jnicol/particleground](https://github.com/jnicol/particleground) for the parallax particle effect.
 Rest of the magic is custom.
 
 As always, hit me up on Twitter [@pschfr](https://twitter.com/pschfr) :D

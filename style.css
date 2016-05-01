@@ -68,6 +68,7 @@ header div#particles-cont {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	opacity: .5;
 }
 header div.wrap {
 	vertical-align: middle;
