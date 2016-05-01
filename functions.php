@@ -9,7 +9,7 @@ function theme_enqueue_scripts() {
 	wp_enqueue_script('main', get_template_directory_uri() . '/includes/main.js', array('jquery'), '', true );
 	if(is_page(9)) { // Loads in map and contact form scripts on contact page only
 		wp_enqueue_script('contact', get_template_directory_uri() . '/includes/contact-scripts.js', '', '', true);
-		wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?callback=initMap', array('jquery', 'main', 'contact'), '', true);
+		wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?callback=initMap', array('jquery', 'contact'), '', true);
 		wpcf7_enqueue_scripts();
 		wpcf7_enqueue_styles();
 		wp_enqueue_style('contact',  get_template_directory_uri() . '/includes/contact-styles.css');
@@ -31,7 +31,7 @@ function theme_widgets_init() {
 		'id'   => 'widget_area_1',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
+		'before_title'  => '<h2 style="display:none;">',
 		'after_title'   => '</h2>'
 	));
 }
