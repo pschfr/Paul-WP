@@ -11,6 +11,7 @@ function theme_enqueue_scripts() {
 		wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?callback=initMap', array('jquery', 'main'), '', true);
 		wpcf7_enqueue_scripts();
 		wpcf7_enqueue_styles();
+		wp_enqueue_style('contact', get_template_directory_uri() . '/includes/contact-styles.css');
 	}
 }
 

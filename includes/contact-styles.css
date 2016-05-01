@@ -1,0 +1,54 @@
+@charset 'UTF-8';
+div#map-container {
+	background-color: #212121;
+	position: relative;
+}
+div#contact-map { height: 35rem; }
+div#wpcf7-f4-p9-o1 {
+	left: 0; right: 0; bottom: 0; top: 0;
+	position: absolute;
+	overflow: auto;
+	margin: auto;
+	z-index: 99;
+	height: 75%;
+	width:  50%;
+	color: #fff;
+}
+div#wpcf7-f4-p9-o1 form p    { padding: 0; }
+div#wpcf7-f4-p9-o1 form label { margin: 0; }
+div#wpcf7-f4-p9-o1 form input, div#map-container div#wpcf7-f4-p9-o1 form textarea {
+	background-color: #777777;
+	background-color: rgba(255,255,255,.2);
+	border: 1px solid transparent;
+	-webkit-transition: all .25s;
+	transition:         all .25s;
+	margin-bottom: .5rem;
+	max-width: 100%;
+	padding: .5rem;
+	width: 100%;
+	color: #fff;
+	outline: 0;
+}
+div#wpcf7-f4-p9-o1 form input:focus, div#wpcf7-f4-p9-o1 form textarea:focus  { border-color: #fff; }
+div#wpcf7-f4-p9-o1 form input[type="submit"], div#wpcf7-f4-p9-o1 form textarea { margin-bottom: 0; }
+div.wpcf7-response-output, div.wpcf7 img.ajax-loader { margin: 0; }
+span.wpcf7-not-valid-tip,  div.gm-style-cc, div.gm-style a[href^="https://maps.google.com/"] div img { display: none; }
+div#wpcf7-f4-p9-o1 form input.wpcf7-not-valid { border-color: red; }
+
+section#content section.entry-content.container  { max-width: 100%; }
+
+::-webkit-input-placeholder {
+	font-style: italic;
+	color: #ddd;
+}
+::-moz-placeholder {
+	font-style: italic;
+	color: #ddd;
+	opacity: 1;
+}
+::placeholder {
+	font-style: italic;
+	color: #ddd;
+}
+
+@media screen and (max-width: 768px) { div#wpcf7-f4-p9-o1 { width: 90%; } }
