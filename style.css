@@ -10,15 +10,21 @@ html {
 	color: #212121;
 }
 *, *:before, *:after { box-sizing: inherit; }
+
 .disable-hover, .disable-hover * { pointer-events: none !important; }
-.wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading h5, .wf-loading h6, .wf-loading p, .wf-loading a, .wf-loading span { opacity: 0; }
-.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6, .wf-active p, .wf-active a, .wf-loading span {
-	-webkit-transition: opacity .67s ease-in-out .33s;
-	-ms-transition: 	opacity .67s ease-in-out .33s;
-	transition: 		opacity .67s ease-in-out .33s;
-	visibility: visible;
-	opacity: 1;
+.clear { clear:  both; }
+.left  { float:  left; }
+.right { float: right; }
+.container {
+	max-width: 1200px;
+	max-width:   75vw;
+	margin: 0 auto;
 }
+.centered, .grid__col--centered {
+	text-align: center;
+	display: block;
+}
+
 img { max-width: 100%; }
 a, a:hover, a:visited {
 	border-bottom: 1px dotted;
@@ -43,18 +49,7 @@ p {
 	line-height: 1.4;
 	margin: 0;
 }
-.clear { clear:  both; }
-.left  { float:  left; }
-.right { float: right; }
-.container {
-	max-width: 1200px;
-	max-width:   75vw;
-	margin: 0 auto;
-}
-.centered, .grid__col--centered {
-	text-align: center;
-	display: block;
-}
+
 header {
 	background-color: #212121;
 	position: relative;
@@ -75,8 +70,10 @@ header div.wrap {
 	letter-spacing: -2px;
 	display: table-cell;
 	font-style:  italic;
+	position: relative;
 	text-align: center;
 	font-size:  4vw;
+	z-index: 9;
 }
 body.home header div.wrap { font-size: 6vw; }
 header h1 {
@@ -92,24 +89,21 @@ header a.arrow {
 	font-size:  28px;
 	font-size: 2.5vw;
 	width: 100%;
+	z-index: 99;
 	bottom: 1%;
 	left: 0%;
 }
-header a.arrow img { height: 2vw; }
 header a.home {
 	text-transform: uppercase;
 	padding: 1em 0 0 1em;
 	position: absolute;
 	font-size:  28px;
 	font-size: 2.5vw;
+	z-index: 99;
 	left: 0;
 	top: 0;
 }
-header a.home img {
-	vertical-align: middle;
-	padding-right: .5em;
-	height: 2vw;
-}
+
 section#about { padding: 3rem 0; }
 section#about h2 { margin: 0 0 1rem; }
 section#about p.peace { font-size: 2rem; }
@@ -123,6 +117,7 @@ section#contact h3 a {
 	font-weight:  bold;
 	padding-top: .5em;
 }
+
 footer {
 	text-transform: uppercase;
 	background-color: #212121;
@@ -156,7 +151,13 @@ footer a.icon:hover {
 	-webkit-transform: scale(1.25,1.25);
 	transform:         scale(1.25,1.25);
 }
+
 @media screen and (max-width: 768px) {
+	.container {
+		max-width: 90%;
+		max-width: 90vw;
+	}
+	.grid__col { padding-left: 0 !important; }
 	header div.wrap { font-size: 8vw; }
 	body.home header div.wrap { font-size: 11vw; }
 	header h1 { margin: 0; }
@@ -166,11 +167,6 @@ footer a.icon:hover {
 	}
 	header a.arrow { font-size: 7vw; }
 	header a.home  { font-size: 5vw; }
-	.container {
-		max-width: 90%;
-		max-width: 90vw;
-	}
-	.grid__col { padding-left: 0 !important; }
 	footer ul {
 		margin-bottom: 3rem;
 		text-align:  center;
@@ -180,6 +176,7 @@ footer a.icon:hover {
 		padding: 0 1rem;
 	}
 }
+
 @media screen and (max-width: 768px) and (orientation: landscape) {
 	body.home header div.wrap { font-size: 6vw; }
 	body.home header h3 { line-height: 1.15; }
