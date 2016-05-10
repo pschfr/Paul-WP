@@ -4,6 +4,7 @@ Author: Paul Schaefer
 Author URI: https://paulmakesthe.net/
 Version: 4.2.0
 */
+/* RESETS */
 @charset 'UTF-8';
 html {
 	font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -12,6 +13,7 @@ html {
 }
 *, *:before, *:after { box-sizing: inherit; }
 
+/* COMMON CLASSES */
 .disable-hover, .disable-hover * { pointer-events: none !important; }
 .clear { clear:  both; }
 .left  { float:  left; }
@@ -25,15 +27,16 @@ html {
 	text-align: center;
 	display: block;
 }
-
-img { max-width: 100%; }
 .featured-image {
-    background-repeat: no-repeat;
-    background-position: center;
+	background-repeat: no-repeat;
+	background-position: center;
 	background-size: contain;
 	display: block;
-    height: 20rem;
+	height: 20rem;
 }
+
+/* TYPOGRAPHY */
+img { max-width: 100%; }
 a, a:hover, a:visited {
 	border-bottom: 1px dotted;
 	text-decoration: none;
@@ -58,6 +61,7 @@ p {
 	margin: 0;
 }
 
+/* LAYOUT */
 header {
 	background-color: #212121;
 	position: relative;
@@ -111,7 +115,6 @@ header a.home {
 	left: 0;
 	top: 0;
 }
-
 section#about { padding: 3rem 0; }
 section#about h2 { margin: 0 0 1rem; }
 section#about p.peace { font-size: 2rem; }
@@ -128,7 +131,6 @@ section#contact h3 a {
 	font-weight:  bold;
 	padding-top: .5em;
 }
-
 footer {
 	text-transform: uppercase;
 	background-color: #212121;
@@ -163,6 +165,7 @@ footer a.icon:hover {
 	transform:         scale(1.25,1.25);
 }
 
+/* RESPONSIVENESS MAGIC */
 @media screen and (max-width: 768px) {
 	.container {
 		max-width: 90%;
@@ -188,6 +191,7 @@ footer a.icon:hover {
 	}
 }
 
+/* LANDSCAPE HACKS */
 @media screen and (max-width: 768px) and (orientation: landscape) {
 	body.home header div.wrap { font-size: 6vw; }
 	body.home header h3 { line-height: 1.15; }
