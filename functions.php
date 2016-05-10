@@ -94,21 +94,6 @@ function disable_emojicons_tinymce($plugins) {
 add_filter('edit_post_link', 'wpse_remove_edit_post_link');
 function wpse_remove_edit_post_link($link) { return ''; }
 
-// Logs DB Queries, Time Spent, and Memory Consumption
-add_action( 'wp_footer', 'performance', 20 );
-function performance($visible = false) {
-    $stat = sprintf('%d queries in %.3f seconds, using %.2fMB memory',
-        get_num_queries(),
-        timer_stop(0, 3),
-        memory_get_peak_usage() / 1024 / 1024
-    );
-    echo $visible ? $stat : "<!--{$stat}\r\nSee something broken or have an idea? https://github.com/pschfr/paul-wp/ -->\r\n";
-}
-
-// Custom WordPress Admin Footer
-add_filter('admin_footer_text', 'remove_footer_admin');
-function remove_footer_admin () { echo 'Don\'t forget to purge the cache, dumbass.'; }
-
 // Register Custom Post Type for my client work
 function clients_post_type() {
 	$labels = array(
@@ -199,6 +184,51 @@ function experiments_post_type() {
 }
 add_action('init', 'experiments_post_type', 0);
 
-
 // It is pretty dumb that I have to add this manually
 add_theme_support('post-thumbnails');
+
+// Adds custom post types to Right Now widget in admin
+function vm_right_now_content_table_end() {
+    $args = array(
+        'public' => true ,
+        '_builtin' => false
+    );
+    $output = 'object';
+    $operator = 'and';
+    $post_types = get_post_types( $args , $output , $operator );
+    foreach( $post_types as $post_type ) {
+        $num_posts = wp_count_posts( $post_type->name );
+        $num = number_format_i18n( $num_posts->publish );
+        $text = _n( $post_type->labels->name, $post_type->labels->name , intval( $num_posts->publish ) );
+        if ( current_user_can( 'edit_posts' ) ) {
+            $cpt_name = $post_type->name;
+        }
+        echo '<li class="post-count"><tr><a href="edit.php?post_type='.$cpt_name.'"><td class="first b b-' . $post_type->name . '"></td>' . $num . '&nbsp;<td class="t ' . $post_type->name . '">' . $text . '</td></a></tr></li>';
+    }
+    $taxonomies = get_taxonomies( $args , $output , $operator );
+    foreach( $taxonomies as $taxonomy ) {
+        $num_terms  = wp_count_terms( $taxonomy->name );
+        $num = number_format_i18n( $num_terms );
+        $text = _n( $taxonomy->labels->name, $taxonomy->labels->name , intval( $num_terms ));
+        if ( current_user_can( 'manage_categories' ) ) {
+            $cpt_tax = $taxonomy->name;
+        }
+        echo '<li class="post-count"><tr><a href="edit-tags.php?taxonomy='.$cpt_tax.'"><td class="first b b-' . $taxonomy->name . '"></td>' . $num . '&nbsp;<td class="t ' . $taxonomy->name . '">' . $text . '</td></a></tr></li>';
+    }
+}
+add_action( 'dashboard_glance_items' , 'vm_right_now_content_table_end' );
+
+// Custom WordPress Admin Footer
+add_filter('admin_footer_text', 'remove_footer_admin');
+function remove_footer_admin () { echo 'Don\'t forget to purge the cache, dumbass.'; }
+
+// Logs DB Queries, Time Spent, and Memory Consumption
+add_action( 'wp_footer', 'performance', 20 );
+function performance($visible = false) {
+    $stat = sprintf('%d queries in %.3f seconds, using %.2fMB memory',
+        get_num_queries(),
+        timer_stop(0, 3),
+        memory_get_peak_usage() / 1024 / 1024
+    );
+    echo $visible ? $stat : "<!--{$stat}\r\nSee something broken or have an idea? https://github.com/pschfr/paul-wp/ -->\r\n";
+}
