@@ -108,3 +108,97 @@ function performance($visible = false) {
 // Custom WordPress Admin Footer
 add_filter('admin_footer_text', 'remove_footer_admin');
 function remove_footer_admin () { echo 'Don\'t forget to purge the cache, dumbass.'; }
+
+// Register Custom Post Type for my client work
+function clients_post_type() {
+	$labels = array(
+		'name'                  => 'Client Work',
+		'singular_name'         => 'Client Work',
+		'menu_name'             => 'Client Work',
+		'name_admin_bar'        => 'Client Work',
+		'archives'              => 'Client Work Archives',
+		'parent_item_colon'     => 'Parent Client Works:',
+		'all_items'             => 'All Client Work',
+		'add_new_item'          => 'Add New Client Work',
+		'add_new'               => 'Add New',
+		'new_item'              => 'New Client Work',
+		'edit_item'             => 'Edit Client Work',
+		'update_item'           => 'Update Client Work',
+		'view_item'             => 'View Client Work',
+		'search_items'          => 'Search Client Work',
+		'not_found'             => 'No client work found',
+		'not_found_in_trash'    => 'No client work found in Trash',
+		'featured_image'        => 'Featured Image',
+		'set_featured_image'    => 'Set featured image',
+		'remove_featured_image' => 'Remove featured image',
+		'use_featured_image'    => 'Use as featured image',
+		'insert_into_item'      => 'Insert into Client Work',
+		'uploaded_to_this_item' => 'Uploaded to this Client Work',
+		'items_list'            => 'Client Work list',
+		'items_list_navigation' => 'Client Work list navigation',
+		'filter_items_list'     => 'Filter Client Work list',
+	);
+	$args = array(
+		'label'                 => 'client',
+		'description'           => 'Featured client work to be displayed on home page',
+		'labels'                => $labels,
+		'supports'              => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'post-formats'),
+		'taxonomies'            => array('category'),
+		'public'                => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 20,
+		'menu_icon'             => 'dashicons-businessman',
+		'capability_type'       => 'page',
+	);
+	register_post_type('client', $args);
+}
+add_action('init', 'clients_post_type', 0);
+
+// Register Custom Post Type for my experiments
+function experiments_post_type() {
+	$labels = array(
+		'name'                  => 'Experiments',
+		'singular_name'         => 'Experiment',
+		'menu_name'             => 'Experiments',
+		'name_admin_bar'        => 'Experiment',
+		'archives'              => 'Experiment Archives',
+		'parent_item_colon'     => 'Parent Experiment:',
+		'all_items'             => 'All Experiments',
+		'add_new_item'          => 'Add New Experiment',
+		'add_new'               => 'Add New',
+		'new_item'              => 'New Experiment',
+		'edit_item'             => 'Edit Experiment',
+		'update_item'           => 'Update Experiment',
+		'view_item'             => 'View Experiment',
+		'search_items'          => 'Search Experiments',
+		'not_found'             => 'No experiments found',
+		'not_found_in_trash'    => 'No experiments found in Trash',
+		'featured_image'        => 'Featured Image',
+		'set_featured_image'    => 'Set featured image',
+		'remove_featured_image' => 'Remove featured image',
+		'use_featured_image'    => 'Use as featured image',
+		'insert_into_item'      => 'Insert into Experiment',
+		'uploaded_to_this_item' => 'Uploaded to this Experiment',
+		'items_list'            => 'Experiment list',
+		'items_list_navigation' => 'Experiment list navigation',
+		'filter_items_list'     => 'Filter Experiment list',
+	);
+	$args = array(
+		'label'                 => 'experiment',
+		'description'           => 'Featured experiments to be displayed on home page',
+		'labels'                => $labels,
+		'supports'              => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'post-formats'),
+		'taxonomies'            => array('category'),
+		'public'                => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 20,
+		'menu_icon'             => 'dashicons-chart-line',
+		'capability_type'       => 'page',
+	);
+	register_post_type('experiment', $args);
+}
+add_action('init', 'experiments_post_type', 0);
+
+
+// It is pretty dumb that I have to add this manually
+add_theme_support('post-thumbnails');

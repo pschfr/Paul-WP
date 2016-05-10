@@ -26,6 +26,13 @@ html {
 }
 
 img { max-width: 100%; }
+div.featured-image {
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: contain;
+	display: block;
+    height: 20rem;
+}
 a, a:hover, a:visited {
 	border-bottom: 1px dotted;
 	text-decoration: none;

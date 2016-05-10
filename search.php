@@ -2,7 +2,10 @@
 <section id="content" role="main">
 <?php if ( have_posts() ) : ?>
 <header class="header">
+<div id="particle-cont"></div>
+<div class="wrap">
 <h1 class="entry-title"><?php printf( __( 'Search Results for: %s', 'o2dca' ), get_search_query() ); ?></h1>
+</div>
 </header>
 <?php while ( have_posts() ) : the_post(); ?>
 <?php get_template_part( 'entry' ); ?>
