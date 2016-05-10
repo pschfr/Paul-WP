@@ -11,10 +11,11 @@ particleground(document.getElementById('particles-cont'));
 
 // Loads webfonts from Google and IonIcons
 WebFont.load({
-	google: { families: [ 'Roboto:400,400italic,700', 'Cardo:400,400italic,700' ] },
+	google: { families: [ 'Roboto:400,400italic,700', 'Amiri:400,400italic,700' ] },
 	custom: { families: [ 'ionicons' ], urls: [ '//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css' ] },
 	active: function (){
-		sessionStorage.fonts = true; // caches the fonts in sessionStorage
+		// caches the fonts in sessionStorage
+		sessionStorage.fonts = true;
 		console.log('webfonts activated');
 	}
 });
@@ -31,7 +32,8 @@ window.addEventListener('scroll', function() {
 	}, 100);
 }, false);
 
-// Takes any element with vh for height and makes it a pixel value to prevent mobile resizing issues TODO: Rewrite in vanilla JS
+// Takes any element with vh for height and makes it a pixel value to prevent mobile resizing issues
+// TODO: Rewrite in vanilla JS
 function greedyJumbotron() {
 	var lockedHeight = $(this).height();
 	$(window).resize(function() {
@@ -44,7 +46,8 @@ function greedyJumbotron() {
 	console.log('locked to ' + lockedHeight + 'px');
 }
 
-// Much faster than loading in tweet and like buttons, just send URL to share URL TODO: Rewrite in vanilla JS
+// Much faster than loading in tweet and like buttons, just send URL to share URL
+// TODO: Rewrite in vanilla JS
 $("a.js-social-share").on("click", function(e) {
 	e.preventDefault();
 	function windowPopup(url, width, height) {
@@ -55,7 +58,8 @@ $("a.js-social-share").on("click", function(e) {
 	console.log('share window popped up');
 });
 
-// Does magic to send user to location in page TODO: Rewrite in vanilla JS
+// Does magic to send user to location in page
+// TODO: Rewrite in vanilla JS
 $('a.arrow').on('click', function(e) {
 	e.preventDefault();
 	// in here to prevent weird resizing errors on mobile due to auto-hiding the URL bar
@@ -69,7 +73,8 @@ $('a.arrow').on('click', function(e) {
 $(function() {
 	// Locks header initally
 	$('header#header').each(greedyJumbotron);
-	// Pulls rendering information from the HTML, logs it in console TODO: Rewrite in vanilla JS
+	// Pulls rendering information from the HTML, logs it in console
+	// TODO: Rewrite in vanilla JS
 	$('body').contents().filter(function(){
 		return this.nodeType == 8;
 	}).each(function(i, e) {

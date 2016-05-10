@@ -1,13 +1,16 @@
 <?php
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 function theme_enqueue_scripts() {
-	wp_deregister_script('jquery');   // Allows me to use more recent version
-	wp_deregister_script('wp-embed'); // Not necessary here either
+	// Allows me to use more recent version
+	wp_deregister_script('jquery');
+	// Not necessary here either
+	wp_deregister_script('wp-embed');
 	wp_enqueue_script('particleground', get_template_directory_uri() . '/includes/particleground.min.retina.js', '', '', true);
 	wp_enqueue_script('webfonts',   '//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.22/webfontloader.js', '', '', true);
 	wp_register_script('jquery',   ('//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'), false, '', true);
 	wp_enqueue_script('main', get_template_directory_uri() . '/includes/main.js', array('jquery'), '', true );
-	if(is_page(9)) { // Loads in map and contact form scripts on contact page only
+	if(is_page(9)) {
+		// Loads in map and contact form scripts on contact page only
 		wp_enqueue_script('contact', get_template_directory_uri() . '/includes/contact-scripts.js', '', '', true);
 		wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?callback=initMap', array('jquery', 'contact'), '', true);
 		wpcf7_enqueue_scripts();
