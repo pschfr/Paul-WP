@@ -37,11 +37,14 @@ html {
 
 /* TYPOGRAPHY */
 img { max-width: 100%; }
-a, a:hover, a:visited {
-	border-bottom: 1px dotted;
+a, a:visited {
+	border-bottom: 1px solid #e14d43;
+	-webkit-transition: border .125s;
+	transition:         border .125s;
 	text-decoration: none;
 	color: inherit;
 }
+a:hover { border-bottom: 3px solid #e14d43; }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Amiri', Georgia, serif;
 	font-weight: normal;
