@@ -211,11 +211,10 @@ function vm_right_now_content_table_end() {
 add_action('dashboard_glance_items' , 'vm_right_now_content_table_end');
 
 // Custom WordPress Admin Footer
-add_filter('admin_footer_text', 'remove_footer_admin');
 function remove_footer_admin () { echo 'Don\'t forget to purge the cache, dumbass.'; }
+add_filter('admin_footer_text', 'remove_footer_admin');
 
 // Logs DB Queries, Time Spent, and Memory Consumption
-add_action( 'wp_footer', 'performance', 20 );
 function performance($visible = false) {
     $stat = sprintf('%d queries in %.3f seconds, using %.2fMB memory',
         get_num_queries(),
@@ -224,3 +223,4 @@ function performance($visible = false) {
     );
     echo $visible ? $stat : "<!--{$stat}\r\nSee something broken or have an idea? https://github.com/pschfr/paul-wp/ -->\r\n";
 }
+add_action('wp_footer', 'performance', 20);
