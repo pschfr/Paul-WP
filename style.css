@@ -7,7 +7,7 @@ Version: 4.2.0
 /* RESETS */
 @charset 'UTF-8';
 html {
-	font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 	color: #212121;
 }
@@ -15,18 +15,12 @@ html {
 
 /* COMMON CLASSES */
 .disable-hover, .disable-hover * { pointer-events: none !important; }
-.clear { clear:  both; }
-.left  { float:  left; }
-.right { float: right; }
 .container {
 	max-width: 1200px;
 	max-width:   75vw;
 	margin: 0 auto;
 }
-.centered, .grid__col--centered {
-	text-align: center;
-	display: block;
-}
+.grid__col--centered { text-align: center; }
 .featured-image {
 	background-repeat: no-repeat;
 	background-position: center;
@@ -46,7 +40,7 @@ a, a:visited {
 }
 a:hover { border-bottom: 3px solid #e14d43; }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Amiri', Georgia, serif;
+	font-family: 'Palatino Linotype', Georgia, serif;
 	font-weight: normal;
 	line-height: 1;
 }
