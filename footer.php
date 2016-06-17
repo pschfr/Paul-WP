@@ -12,7 +12,7 @@ Share with<br>
 </div>
 <div class='grid__col--1-of-3 grid__col'>
 Beam me up<br>
-<a class='arrow icon ion-chevron-up' href='#header'></a>
+<a class='arrow icon ion-chevron-up' href='#'></a>
 </div>
 </div>
 </footer>
