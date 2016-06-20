@@ -1,7 +1,9 @@
 // Initiates particleground and tweaks density
 // TODO: once scrolled past top, pause particleground via pg.pause();
 particleground(document.getElementById('particles-cont'), {
-	density: '9000'
+	density:   '9000',
+	dotColor:  '#999999',
+	lineColor: '#999999'
 });
 
 // Tweaks ZenScroll default speed
@@ -18,20 +20,6 @@ window.addEventListener('scroll', function() {
 		body.classList.remove('disable-hover');
 	}, 100);
 }, false);
-
-// Takes any element with vh for height and makes it a pixel value to prevent mobile resizing issues
-// TODO: Rewrite in vanilla JS
-// function greedyJumbotron() {
-// 	var lockedHeight = $(this).height();
-// 	$(window).resize(function() {
-// 		if (Math.abs(lockedHeight - $(this).height()) > 100) {
-// 			lockedHeight = $(this).height();
-// 			$(this).css('height', lockedHeight + 'px');
-// 		}
-// 	});
-// 	$(this).css('height', lockedHeight + 'px');
-// 	console.log('locked to ' + lockedHeight + 'px');
-// }
 
 // Much faster than loading in tweet and like buttons, just send URL to share URL
 // TODO: Rewrite in vanilla JS

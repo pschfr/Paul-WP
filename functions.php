@@ -5,7 +5,7 @@ function theme_enqueue_scripts() {
 	wp_deregister_script('jquery');   // We do this to include a more recent version
 	wp_enqueue_script('particleground', get_template_directory_uri() . '/includes/particleground.min.retina.js', '', '', true);
 	wp_enqueue_script('zenscroll', get_template_directory_uri() . '/includes/zenscroll-min.js', '', '', true);
-	wp_register_script('jquery',   ('//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js'), false, '', true);
+	wp_register_script('jquery',   ('//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js'), false, '', true);
 	wp_enqueue_script('main', get_template_directory_uri() . '/includes/main.js', array('jquery'), '', true );
 	if(is_page(9)) {
 		// Loads in map and contact form scripts on contact page only
@@ -21,7 +21,6 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles', 11);
 function theme_enqueue_styles() {
 	wp_enqueue_style('normalize', '//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css');
 	wp_enqueue_style('toast',     '//cdnjs.cloudflare.com/ajax/libs/toast-css/1.1.0/grid.min.css');
-	wp_enqueue_style('ionicons',  '//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
 	wp_enqueue_style('main', get_template_directory_uri().'/style.css' );
 }
 

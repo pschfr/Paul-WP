@@ -14,7 +14,9 @@
 <h1 class="entry-title"><?php the_title(); ?></h1>
 <h3>digital artist <span class='amp'>&amp;</span> web developer</h3>
 </div>
-<a class='arrow ion-chevron-down' href='#about'></a>
+<a class='arrow bounce' href='#about'>
+<svg class="icon icon-arrow-down"><use xlink:href="#icon-arrow-down"></use></svg>
+</a>
 </header>
 <section class="entry-content grid container">
 <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
