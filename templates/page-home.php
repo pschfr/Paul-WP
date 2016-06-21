@@ -15,7 +15,7 @@
 <h3>digital artist <span class='amp'>&amp;</span> web developer</h3>
 </div>
 <a class='arrow bounce' href='#about'>
-<svg class="icon icon-arrow-down"><use xlink:href="#icon-arrow-down"></use></svg>
+<svg class="icon icon-arrow-down"><use xlink:href="<?php echo get_template_directory_uri(); ?>/includes/symbol-defs.svg#icon-arrow-down"></use></svg>
 </a>
 </header>
 <section class="entry-content grid container">

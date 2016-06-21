@@ -103,17 +103,21 @@ header a.arrow {
 }
 header a.home {
 	text-transform: uppercase;
-	padding: 1em 0 0 1em;
+	padding: 1rem 0 0 1rem;
 	position: absolute;
 	z-index: 99;
 	left: 0;
 	top: 0;
 }
-header a.arrow svg, header a.home svg {
+header a.arrow svg {
 	height: 2.5rem;
 	width:  2.5rem;
-	fill: #fff;
 }
+header a.home svg {
+	height: 1rem;
+	width:  1rem;
+}
+header a.arrow svg, header a.home svg { fill: #fff; }
 section#about { padding: 3rem 0; }
 section#about h2 { margin: 0 0 1rem; }
 section#about p.peace { font-size: 2rem; }
@@ -157,10 +161,10 @@ footer a, footer a:hover { border: none; }
 footer .icon {
     -webkit-transition: all .125s ease;
     transition:         all .125s ease;
+	margin: 1rem .5rem 2rem;
     display: inline-block;
     font-weight: normal;
-    margin: 0 .5rem;
-    height: 8rem;
+    height: 2rem;
     width: 2rem;
     fill: #fff;
 }

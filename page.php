@@ -7,7 +7,7 @@
 <div class="wrap">
 <h1 class="entry-title"><?php the_title(); ?></h1>
 </div>
-<a href="<?php echo site_url(); ?>" class="home"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg> Home</a>
+<a href="<?php echo site_url(); ?>" class="home"><svg class="icon icon-home"><use xlink:href="<?php echo get_template_directory_uri(); ?>/includes/symbol-defs.svg#icon-home"></use></svg> Home</a>
 </header>
 <section class="entry-content grid container">
 <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
