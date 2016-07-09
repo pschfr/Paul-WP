@@ -1,6 +1,6 @@
-#Paul-WP [paulmakesthe.net](https://paulmakesthe.net/)
+#Paul-WP
 
-*Started Dec 27, 2015*
+*Started Dec 27, 2015 - Replaced by [https://github.com/pschfr/pschfr.github.io/](https://github.com/pschfr/pschfr.github.io/) on Jun 27, 2016*
 
 ![https://paulmakesthe.net/](screenshot.png)
 
